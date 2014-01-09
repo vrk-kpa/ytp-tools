@@ -1,0 +1,56 @@
+URI-tunniste	Palvelu	Fasettitermi
+	P	API
+	P	Arkkitehtuurikuvaus
+	E	Julkisen hallinnon yhteisen kokonaisarkkitehtuurin kuvaus
+	E	Kohdearkkitehtuurikuvaus
+	E	Kuntasektorin yhteisen kokonaisarkkitehtuurin kuvaus
+	E	Nykytilan kuvaus
+http://www.yso.fi/onto/juho/p525	E	Soveltamisohje
+	E	Sidosarkkitehtuurin kuvaus
+	E	Tavoitetilan kuvaus
+	E	Toteutusesimerkki
+	E	Valtionhallinnon yhteisen kokonaisarkkitehtuurin kuvaus
+	E	Viitearkkitehtuurin kuvaus
+	E	Yhteentoimivuuden kuvaus
+	E	Yksittäisen organisaation arkkitehtuurikuvaus
+http://www.yso.fi/onto/ysa/Y189604	P	Avoin data
+http://www.yso.fi/onto/ysa/Y97608	P	Määräys
+	P	Ohjelmistokomponentti
+	P	Rakenteinen tieto
+http://www.yso.fi/onto/ysa/Y99026	P	Standardit
+http://www.yso.fi/onto/ysa/Y112956	E	Dokumenttiformaatit
+http://www.yso.fi/onto/ysa/Y95250	E	Hakemistot
+	E	Koodistot
+http://www.yso.fi/onto/ysa/Y105453	E	Käyttöliittymät
+http://www.yso.fi/onto/ysa/Y100746	E	Luokitukset
+http://www.yso.fi/onto/ysa/Y97272	E	Mallintaminen
+	E	Merkistöt
+http://www.yso.fi/onto/ysa/Y111329	E	Metatiedot
+http://www.yso.fi/onto/ysa/Y97924	E	Paikkatieto
+http://www.yso.fi/onto/ysa/Y98726	E	Sanastot
+	E	Tiedon esitystapa
+http://www.yso.fi/onto/ysa/Y106522	E	Tietoturva
+http://www.yso.fi/onto/ysa/Y111682	E	Tietoverkot
+	E	Toiminnan kehittäminen
+http://www.yso.fi/onto/ysa/Y140881	E	Tunnisteet
+http://www.yso.fi/onto/ysa/Y100917	E	Video ja audio
+	E	Viestijärjestelmät
+	E	Web-services
+http://www.yso.fi/onto/ysa/Y97739	P	Suositus tai ohje
+	E	JHS-suositus
+	E	Muu suositus tai ohje
+	E	VAHTI-ohje
+	P	Teknologiakuvaus
+	E	Teknologiapalvelu
+	P	Tietojen kuvaus
+	E	Koodisto
+	E	Käsitemalli
+http://www.yso.fi/onto/yso/p21341	E	Ontologia
+http://www.yso.fi/onto/liito/p5842	E	Sanasto
+http://www.yso.fi/onto/ysa/Y131552	E	XML-skeema
+	P	Tietojärjestelmän kuvaus
+	E	Tietojärjestelmäpalvelu
+	E	Tietojärjestelmäseloste
+	P	Toiminnan kuvaus
+	E	Palvelun kuvaus
+	E	Prosessikuvaus

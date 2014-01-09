@@ -1,4 +1,4 @@
 ytp-tools
 =========
 
-Miscellaneous YTP developer tools
+This repository provides miscellaneous and temporary YTP developer tools.
