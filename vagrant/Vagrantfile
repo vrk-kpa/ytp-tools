@@ -18,33 +18,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     ytp.vm.synced_folder "../../", "/src"
 
     ytp.vm.provision "ansible" do |ansible|
+      # http://docs.vagrantup.com/v2/provisioning/ansible.html
       ansible.playbook = "../../ytp/site.yml"
-      ansible.verbose = "v"
+      ansible.verbose = "vv"
       ansible.inventory_path = "inventory-vagrant"
       #ansible.groups = { "[webservers]" => "10.10.10.10" }
     end
   end
 
-  #config.vm.box = "precise64"
-  #config.vm.box_url = "http://files.vagrantup.com/precise64.box"
-  #config.vm.define = "ytplocal"
-
-  # Create a forwarded port mapping which maps host ports to guest ports.
-  # config.vm.network :forwarded_port, guest: 80, host: 8080
-
-  # Create a private network, which allows host-only access to the machine.
-  #config.vm.network :private_network, ip: "10.10.10.10"
-
-  # Share an additional folder to the guest VM.
-  #config.vm.synced_folder "../../", "/src"
-
-  # Ansible integration
-  # http://docs.vagrantup.com/v2/provisioning/ansible.html
-  #config.vm.provision "ansible" do |ansible|
-  #  ansible.playbook = "../../ytp/site.yml"
-  #  ansible.verbose = "v"
-  #  #ansible.inventory_path = "inventory-vagrant"
-  #  ansible.groups = { "[webservers]" => "10.10.10.10" }
-  #end
-
+  # http://docs.vagrantup.com/v2/multi-machine/index.html
+  #config.vm.define "db" do |db|
 end
