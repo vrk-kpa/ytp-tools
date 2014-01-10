@@ -1,0 +1,50 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+#
+# This Vagrantfile sets up a virtual machines and installs the YTP service
+# on it to create a local development environment.
+#
+# Tested with Vagrant 1.4.2 and VirtualBox 4.3.6 on Ubuntu 13.10 64-bit
+
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+
+  config.vm.define "ytp" do |ytp|
+    ytp.vm.box = "precise64"
+    ytp.vm.box_url = "http://files.vagrantup.com/precise64.box"
+
+    ytp.vm.network :private_network, ip: "10.10.10.10"
+    ytp.vm.synced_folder "../../", "/src"
+
+    ytp.vm.provision "ansible" do |ansible|
+      ansible.playbook = "../../ytp/site.yml"
+      ansible.verbose = "v"
+      ansible.inventory_path = "inventory-vagrant"
+      #ansible.groups = { "[webservers]" => "10.10.10.10" }
+    end
+  end
+
+  #config.vm.box = "precise64"
+  #config.vm.box_url = "http://files.vagrantup.com/precise64.box"
+  #config.vm.define = "ytplocal"
+
+  # Create a forwarded port mapping which maps host ports to guest ports.
+  # config.vm.network :forwarded_port, guest: 80, host: 8080
+
+  # Create a private network, which allows host-only access to the machine.
+  #config.vm.network :private_network, ip: "10.10.10.10"
+
+  # Share an additional folder to the guest VM.
+  #config.vm.synced_folder "../../", "/src"
+
+  # Ansible integration
+  # http://docs.vagrantup.com/v2/provisioning/ansible.html
+  #config.vm.provision "ansible" do |ansible|
+  #  ansible.playbook = "../../ytp/site.yml"
+  #  ansible.verbose = "v"
+  #  #ansible.inventory_path = "inventory-vagrant"
+  #  ansible.groups = { "[webservers]" => "10.10.10.10" }
+  #end
+
+end
