@@ -45,6 +45,7 @@ class YtpDevelopMain(object):
         return 0
 
     def paster_serve(self, name=None):
+        subprocess.call(["/usr/sbin/ufw", "allow", "5000"])
         subprocess.call(["/usr/bin/sudo", "-u", "ckan", os.path.join(self.virtual_environment, "bin/paster"), "serve", "/etc/ckan/default/production.ini"])
         print "Failed to launch server"
         return 1  # exit via ctrl-c
