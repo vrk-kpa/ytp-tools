@@ -38,9 +38,22 @@ class YtpDevelopMain(object):
     def develop_drupal(self, name):
         return self._replace_with_link("/var/www/ytp/sites/all/themes/ytp_theme", "/src/ytp-theme-drupal")
 
+    def list_projects(self, name=None):
+        for name in os.listdir(self.source_path):
+            if os.path.isdir(os.path.join(self.source_path, name)) and self._get_mapping(name):
+                print name
+        return 0
+
+    def paster_serve(self, name=None):
+        subprocess.call(["/usr/bin/sudo", "-u", "ckan", os.path.join(self.virtual_environment, "bin/paster"), "serve", "/etc/ckan/default/production.ini"])
+        print "Failed to launch server"
+        return 1  # exit via ctrl-c
+
     def _get_mappings(self):
         if self._mappings is None:
-            self._mappings = {re.compile(u'^ckanext-.+'): self.develop_ckanext, u'ytp-assets-common': self.develop_assets, u'ytp-theme-drupal': self.develop_drupal}
+            self._mappings = {re.compile(u'^ckanext-.+'): self.develop_ckanext, u'ytp-assets-common': self.develop_assets,
+                              u'ytp-theme-drupal': self.develop_drupal,
+                              u'--list': self.list_projects, u'--serve': self.paster_serve}
         return self._mappings
 
     def _get_mapping(self, project_name):
@@ -55,15 +68,8 @@ class YtpDevelopMain(object):
 
     def main(self, arguments):
         if len(arguments) != 2:
-            print u"Usage: %s <project-name>\n       %s --list" % (arguments[0], arguments[0])
+            print u"Usage: %s <project-name>\n       %s --list       %s --serve" % (arguments[0], arguments[0], arguments[0])
             exit(2)
-
-        if arguments[1] == '--list':
-            for name in os.listdir(self.source_path):
-                if os.path.isdir(os.path.join(self.source_path, name)) and self._get_mapping(name):
-                    print name
-
-            return 0
 
         project_name = arguments[1]
         method = self._get_mapping(project_name)
