@@ -69,7 +69,7 @@ class YtpDevelopMain(object):
 
     def main(self, arguments):
         if len(arguments) != 2:
-            print u"Usage: %s <project-name>\n       %s --list       %s --serve" % (arguments[0], arguments[0], arguments[0])
+            print u"Usage: %s <project-name>\n       %s --list\n       %s --serve" % (arguments[0], arguments[0], arguments[0])
             exit(2)
 
         project_name = arguments[1]
