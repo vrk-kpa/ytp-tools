@@ -4,467 +4,422 @@
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
 >
-  <skos:Concept rdf:about="http://avoindata.fi/onto/topic#term">
-    <skos:narrower>
-      <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p33">
-        <skos:broader rdf:resource="http://avoindata.fi/onto/topic#term"/>
-        <skos:prefLabel xml:lang="sv">Arbete</skos:prefLabel>
-        <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptscheme"/>
-        <skos:prefLabel xml:lang="en">Work</skos:prefLabel>
-        <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p1810"/>
-        <skos:prefLabel xml:lang="fi">Työ</skos:prefLabel>
+  <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p20">
+    <skos:broader>
+      <skos:Concept rdf:about="http://avoindata.fi/onto/topic">
+        <skos:narrower rdf:resource="http://avoindata.fi/onto/topic#p41"/>
+        <skos:narrower rdf:resource="http://avoindata.fi/onto/topic#p36"/>
+        <skos:prefLabel xml:lang="en">topic</skos:prefLabel>
+        <skos:narrower rdf:resource="http://avoindata.fi/onto/topic#p32"/>
+        <skos:narrower rdf:resource="http://avoindata.fi/onto/topic#p13"/>
+        <skos:narrower rdf:resource="http://avoindata.fi/onto/topic#p12"/>
+        <skos:narrower rdf:resource="http://avoindata.fi/onto/topic#p7"/>
+        <skos:narrower rdf:resource="http://avoindata.fi/onto/topic#p16"/>
+        <skos:narrower rdf:resource="http://avoindata.fi/onto/topic#p20"/>
+        <skos:narrower rdf:resource="http://avoindata.fi/onto/topic#p2"/>
+        <skos:narrower rdf:resource="http://avoindata.fi/onto/topic#p25"/>
+        <skos:narrower rdf:resource="http://avoindata.fi/onto/topic#p23"/>
+        <skos:narrower rdf:resource="http://avoindata.fi/onto/topic#p15"/>
+        <skos:narrower rdf:resource="http://avoindata.fi/onto/topic#p44"/>
+        <skos:narrower rdf:resource="http://avoindata.fi/onto/topic#p19"/>
+        <skos:narrower rdf:resource="http://avoindata.fi/onto/topic#p17"/>
+        <skos:narrower rdf:resource="http://avoindata.fi/onto/topic#p8"/>
+        <skos:narrower rdf:resource="http://avoindata.fi/onto/topic#p33"/>
+        <skos:narrower rdf:resource="http://avoindata.fi/onto/topic#p43"/>
+        <skos:narrower rdf:resource="http://avoindata.fi/onto/topic#p4"/>
+        <skos:narrower rdf:resource="http://avoindata.fi/onto/topic#p26"/>
+        <skos:narrower rdf:resource="http://avoindata.fi/onto/topic#p42"/>
+        <skos:narrower rdf:resource="http://avoindata.fi/onto/topic#p28"/>
+        <skos:narrower rdf:resource="http://avoindata.fi/onto/topic#p14"/>
+        <skos:narrower rdf:resource="http://avoindata.fi/onto/topic#p3"/>
+        <skos:narrower rdf:resource="http://avoindata.fi/onto/topic#p24"/>
+        <skos:narrower rdf:resource="http://avoindata.fi/onto/topic#p10"/>
+        <skos:narrower rdf:resource="http://avoindata.fi/onto/topic#p35"/>
+        <skos:narrower rdf:resource="http://avoindata.fi/onto/topic#p40"/>
+        <skos:narrower rdf:resource="http://avoindata.fi/onto/topic#p30"/>
+        <skos:narrower rdf:resource="http://avoindata.fi/onto/topic#p18"/>
+        <skos:narrower rdf:resource="http://avoindata.fi/onto/topic#p27"/>
+        <skos:narrower rdf:resource="http://avoindata.fi/onto/topic#p38"/>
+        <skos:narrower rdf:resource="http://avoindata.fi/onto/topic#p22"/>
+        <skos:narrower rdf:resource="http://avoindata.fi/onto/topic#p39"/>
+        <skos:narrower rdf:resource="http://avoindata.fi/onto/topic#p34"/>
+        <skos:narrower rdf:resource="http://avoindata.fi/onto/topic#p37"/>
+        <skos:narrower rdf:resource="http://avoindata.fi/onto/topic#p31"/>
+        <skos:narrower rdf:resource="http://avoindata.fi/onto/topic#p6"/>
+        <skos:narrower rdf:resource="http://avoindata.fi/onto/topic#p9"/>
+        <skos:narrower rdf:resource="http://avoindata.fi/onto/topic#p11"/>
+        <skos:narrower rdf:resource="http://avoindata.fi/onto/topic#p5"/>
+        <skos:narrower rdf:resource="http://avoindata.fi/onto/topic#p29"/>
+        <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptScheme"/>
+        <skos:narrower rdf:resource="http://avoindata.fi/onto/topic#p21"/>
+        <skos:topConceptOf rdf:resource="http://avoindata.fi/onto/topic/conceptScheme"/>
+        <skos:narrower rdf:resource="http://avoindata.fi/onto/topic#p1"/>
       </skos:Concept>
-    </skos:narrower>
-    <skos:narrower>
-      <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p41">
-        <skos:broader rdf:resource="http://avoindata.fi/onto/topic#term"/>
-        <skos:prefLabel xml:lang="en">Population</skos:prefLabel>
-        <skos:prefLabel xml:lang="sv">Befolkning </skos:prefLabel>
-        <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptscheme"/>
-        <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p4207"/>
-        <skos:prefLabel xml:lang="fi">Väestö</skos:prefLabel>
-      </skos:Concept>
-    </skos:narrower>
-    <skos:narrower>
-      <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p13">
-        <skos:broader rdf:resource="http://avoindata.fi/onto/topic#term"/>
-        <skos:prefLabel xml:lang="en">Culture</skos:prefLabel>
-        <skos:prefLabel xml:lang="sv">Kultur</skos:prefLabel>
-        <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p372"/>
-        <skos:prefLabel xml:lang="fi">Kulttuuri</skos:prefLabel>
-        <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptscheme"/>
-      </skos:Concept>
-    </skos:narrower>
-    <skos:prefLabel xml:lang="sv">entitet</skos:prefLabel>
-    <skos:narrower>
-      <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p19">
-        <skos:broader rdf:resource="http://avoindata.fi/onto/topic#term"/>
-        <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptscheme"/>
-        <skos:prefLabel xml:lang="fi">Ohjaus</skos:prefLabel>
-        <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p16877"/>
-        <skos:prefLabel xml:lang="en">Direction</skos:prefLabel>
-        <skos:prefLabel xml:lang="sv">Styrning</skos:prefLabel>
-      </skos:Concept>
-    </skos:narrower>
-    <skos:topConceptOf>
-      <skos:ConceptScheme rdf:about="http://avoindata.fi/onto/topic/conceptscheme">
+    </skos:broader>
+    <skos:prefLabel xml:lang="fi">Oikeusturva</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Legal protection</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">Rättsskydd</skos:prefLabel>
+    <skos:inScheme>
+      <skos:ConceptScheme rdf:about="http://avoindata.fi/onto/topic/conceptScheme">
+        <skos:prefLabel xml:lang="sv">Ontologi för Avoindata.fi</skos:prefLabel>
+        <dc11:description xml:lang="fi">Avoindata.fi -palvelun ontologiassa on kuvattu palveluun tallennettavien aiheiden ja sisältötyyppien sanastot.</dc11:description>
+        <dc11:publisher xml:lang="sv">Finansministeriet</dc11:publisher>
         <dc11:publisher xml:lang="fi">Valtiovarainministeriö</dc11:publisher>
-        <dc11:title xml:lang="fi">Avoindata.fi:n ontologia</dc11:title>
         <dc11:title xml:lang="en">Ontology of Avoindata.fi.</dc11:title>
-        <skos:prefLabel xml:lang="fi">Avoindata.fi:n ontologia</skos:prefLabel>
+        <dc11:title xml:lang="fi">Avoindata.fi:n ontologia</dc11:title>
+        <dc11:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
+        <dc11:title xml:lang="sv">Ontologi för Avoindata.fi</dc11:title>
         <dc11:publisher xml:lang="en">Ministry of Finance</dc11:publisher>
         <dc11:description xml:lang="en">Here are described the glossaries of the topics and content types saved in the service.</dc11:description>
-        <dc11:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
-        <skos:prefLabel xml:lang="sv">Ontologi för Avoindata.fi</skos:prefLabel>
-        <skos:hasTopConcept rdf:resource="http://avoindata.fi/onto/topic#term"/>
-        <dc11:publisher xml:lang="sv">Finansministeriet</dc11:publisher>
-        <dc11:title xml:lang="sv">Ontologi för Avoindata.fi</dc11:title>
+        <skos:prefLabel xml:lang="fi">Avoindata.fi:n ontologia</skos:prefLabel>
+        <skos:hasTopConcept rdf:resource="http://avoindata.fi/onto/topic"/>
         <skos:prefLabel xml:lang="en">Ontology of Avoindata.fi.</skos:prefLabel>
-        <dc11:description xml:lang="fi">Avoindata.fi -palvelun ontologiassa on kuvattu palveluun tallennettavien aiheiden ja sisältötyyppien sanastot.</dc11:description>
       </skos:ConceptScheme>
-    </skos:topConceptOf>
-    <skos:narrower>
-      <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p21">
-        <skos:broader rdf:resource="http://avoindata.fi/onto/topic#term"/>
-        <skos:prefLabel xml:lang="sv">Undervisning</skos:prefLabel>
-        <skos:prefLabel xml:lang="fi">Opetus</skos:prefLabel>
-        <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptscheme"/>
-        <skos:prefLabel xml:lang="en">Teaching</skos:prefLabel>
-        <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p2630"/>
-      </skos:Concept>
-    </skos:narrower>
-    <skos:prefLabel xml:lang="en">object</skos:prefLabel>
-    <skos:narrower>
-      <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p26">
-        <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptscheme"/>
-        <skos:prefLabel xml:lang="fi">Sosiaalipalvelut</skos:prefLabel>
-        <skos:prefLabel xml:lang="sv">Social service</skos:prefLabel>
-        <skos:broader rdf:resource="http://avoindata.fi/onto/topic#term"/>
-        <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p1307"/>
-        <skos:prefLabel xml:lang="en">Social services</skos:prefLabel>
-      </skos:Concept>
-    </skos:narrower>
-    <skos:narrower>
-      <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p28">
-        <skos:broader rdf:resource="http://avoindata.fi/onto/topic#term"/>
-        <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p2339"/>
-        <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptscheme"/>
-        <skos:prefLabel xml:lang="en">Technology </skos:prefLabel>
-        <skos:prefLabel xml:lang="fi">Teknologia</skos:prefLabel>
-        <skos:prefLabel xml:lang="sv">Teknologi</skos:prefLabel>
-      </skos:Concept>
-    </skos:narrower>
-    <skos:narrower>
-      <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p15">
-        <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p1464"/>
-        <skos:broader rdf:resource="http://avoindata.fi/onto/topic#term"/>
-        <skos:prefLabel xml:lang="sv">Lagar</skos:prefLabel>
-        <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptscheme"/>
-        <skos:prefLabel xml:lang="fi">Lait</skos:prefLabel>
-        <skos:prefLabel xml:lang="en">Laws</skos:prefLabel>
-      </skos:Concept>
-    </skos:narrower>
-    <skos:narrower>
-      <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p22">
-        <skos:prefLabel xml:lang="fi">Puolustus</skos:prefLabel>
-        <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p4552"/>
-        <skos:prefLabel xml:lang="en">Defence</skos:prefLabel>
-        <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptscheme"/>
-        <skos:broader rdf:resource="http://avoindata.fi/onto/topic#term"/>
-        <skos:prefLabel xml:lang="sv">Försvar</skos:prefLabel>
-      </skos:Concept>
-    </skos:narrower>
-    <skos:narrower>
-      <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p3">
-        <skos:prefLabel xml:lang="fi">Demokratia</skos:prefLabel>
-        <skos:prefLabel xml:lang="en">Democracy</skos:prefLabel>
-        <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptscheme"/>
-        <skos:prefLabel xml:lang="sv">Demokrati</skos:prefLabel>
-        <skos:broader rdf:resource="http://avoindata.fi/onto/topic#term"/>
-        <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p742"/>
-      </skos:Concept>
-    </skos:narrower>
-    <skos:narrower>
-      <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p11">
-        <skos:broader rdf:resource="http://avoindata.fi/onto/topic#term"/>
-        <skos:prefLabel xml:lang="sv">Fastigheter</skos:prefLabel>
-        <skos:prefLabel xml:lang="en">Real estates</skos:prefLabel>
-        <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptscheme"/>
-        <skos:prefLabel xml:lang="fi">Kiinteistöt</skos:prefLabel>
-        <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p6712"/>
-      </skos:Concept>
-    </skos:narrower>
-    <skos:narrower>
-      <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p1">
-        <skos:prefLabel xml:lang="fi">Asemakaavat</skos:prefLabel>
-        <skos:prefLabel xml:lang="sv">Mönster</skos:prefLabel>
-        <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptscheme"/>
-        <skos:prefLabel xml:lang="en">Plans</skos:prefLabel>
-        <skos:broader rdf:resource="http://avoindata.fi/onto/topic#term"/>
-        <skos:closeMatch rdf:resource="http://www.yso.fi/onto/yso/p763"/>
-      </skos:Concept>
-    </skos:narrower>
-    <skos:narrower>
-      <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p32">
-        <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p7349"/>
-        <skos:prefLabel xml:lang="sv">Trygghet </skos:prefLabel>
-        <skos:broader rdf:resource="http://avoindata.fi/onto/topic#term"/>
-        <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptscheme"/>
-        <skos:prefLabel xml:lang="fi">Turvallisuus</skos:prefLabel>
-        <skos:prefLabel xml:lang="en">Security</skos:prefLabel>
-      </skos:Concept>
-    </skos:narrower>
-    <skos:narrower>
-      <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p2">
-        <skos:broader rdf:resource="http://avoindata.fi/onto/topic#term"/>
-        <skos:prefLabel xml:lang="sv">Boende</skos:prefLabel>
-        <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptscheme"/>
-        <skos:prefLabel xml:lang="en">Housing</skos:prefLabel>
-        <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p1797"/>
-        <skos:prefLabel xml:lang="fi">Asuminen</skos:prefLabel>
-      </skos:Concept>
-    </skos:narrower>
-    <skos:narrower>
-      <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p39">
-        <skos:prefLabel xml:lang="en">Water supply and sewerage</skos:prefLabel>
-        <skos:prefLabel xml:lang="sv">Vatten och avlopp</skos:prefLabel>
-        <skos:prefLabel xml:lang="fi">Vesihuolto</skos:prefLabel>
-        <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptscheme"/>
-        <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p9681"/>
-        <skos:broader rdf:resource="http://avoindata.fi/onto/topic#term"/>
-      </skos:Concept>
-    </skos:narrower>
-    <skos:narrower>
-      <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p29">
-        <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p2762"/>
-        <skos:prefLabel xml:lang="en">Health</skos:prefLabel>
-        <skos:broader rdf:resource="http://avoindata.fi/onto/topic#term"/>
-        <skos:prefLabel xml:lang="fi">Terveys</skos:prefLabel>
-        <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptscheme"/>
-        <skos:prefLabel xml:lang="sv">Hälsa</skos:prefLabel>
-      </skos:Concept>
-    </skos:narrower>
-    <skos:narrower>
-      <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p12">
-        <skos:prefLabel xml:lang="fi">Koulutus</skos:prefLabel>
-        <skos:prefLabel xml:lang="sv">Utbildning</skos:prefLabel>
-        <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptscheme"/>
-        <skos:prefLabel xml:lang="en">Education and training</skos:prefLabel>
-        <skos:broader rdf:resource="http://avoindata.fi/onto/topic#term"/>
-        <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p84"/>
-      </skos:Concept>
-    </skos:narrower>
-    <skos:narrower>
-      <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p18">
-        <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p13084"/>
-        <skos:broader rdf:resource="http://avoindata.fi/onto/topic#term"/>
-        <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptscheme"/>
-        <skos:prefLabel xml:lang="fi">Luonto</skos:prefLabel>
-        <skos:prefLabel xml:lang="en">Nature</skos:prefLabel>
-        <skos:prefLabel xml:lang="sv">Naturen</skos:prefLabel>
-      </skos:Concept>
-    </skos:narrower>
-    <skos:narrower>
-      <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p44">
-        <skos:prefLabel xml:lang="en">Businesses </skos:prefLabel>
-        <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p3128"/>
-        <skos:prefLabel xml:lang="sv">Företag </skos:prefLabel>
-        <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptscheme"/>
-        <skos:prefLabel xml:lang="fi">Yritykset</skos:prefLabel>
-        <skos:broader rdf:resource="http://avoindata.fi/onto/topic#term"/>
-      </skos:Concept>
-    </skos:narrower>
-    <skos:narrower>
-      <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p4">
-        <skos:prefLabel xml:lang="fi">Elinkeinot</skos:prefLabel>
-        <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptscheme"/>
-        <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p1764"/>
-        <skos:broader rdf:resource="http://avoindata.fi/onto/topic#term"/>
-        <skos:prefLabel xml:lang="sv">Näringar</skos:prefLabel>
-        <skos:prefLabel xml:lang="en">Means of livelihood</skos:prefLabel>
-      </skos:Concept>
-    </skos:narrower>
-    <skos:narrower>
-      <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p17">
-        <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptscheme"/>
-        <skos:prefLabel xml:lang="fi">Liikunta</skos:prefLabel>
-        <skos:broader rdf:resource="http://avoindata.fi/onto/topic#term"/>
-        <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p916"/>
-        <skos:prefLabel xml:lang="sv">Motion</skos:prefLabel>
-        <skos:prefLabel xml:lang="en">Physical training</skos:prefLabel>
-      </skos:Concept>
-    </skos:narrower>
-    <skos:narrower>
-      <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p34">
-        <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p8831"/>
-        <skos:prefLabel xml:lang="en">Labour market</skos:prefLabel>
-        <skos:prefLabel xml:lang="sv">Arbetsmarknaden </skos:prefLabel>
-        <skos:broader rdf:resource="http://avoindata.fi/onto/topic#term"/>
-        <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptscheme"/>
-        <skos:prefLabel xml:lang="fi">Työmarkkinat</skos:prefLabel>
-      </skos:Concept>
-    </skos:narrower>
-    <skos:narrower>
-      <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p40">
-        <skos:prefLabel xml:lang="sv">Kommunikation</skos:prefLabel>
-        <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptscheme"/>
-        <skos:prefLabel xml:lang="fi">Viestintä</skos:prefLabel>
-        <skos:prefLabel xml:lang="en">Communication</skos:prefLabel>
-        <skos:broader rdf:resource="http://avoindata.fi/onto/topic#term"/>
-        <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p36"/>
-      </skos:Concept>
-    </skos:narrower>
-    <skos:narrower>
-      <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p20">
-        <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p1911"/>
-        <skos:broader rdf:resource="http://avoindata.fi/onto/topic#term"/>
-        <skos:prefLabel xml:lang="fi">Oikeusturva</skos:prefLabel>
-        <skos:prefLabel xml:lang="en">Legal protection</skos:prefLabel>
-        <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptscheme"/>
-        <skos:prefLabel xml:lang="sv">Rättsskydd</skos:prefLabel>
-      </skos:Concept>
-    </skos:narrower>
-    <skos:narrower>
-      <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p14">
-        <skos:prefLabel xml:lang="sv">Konsumtion</skos:prefLabel>
-        <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p8574"/>
-        <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptscheme"/>
-        <skos:prefLabel xml:lang="en">Consumption</skos:prefLabel>
-        <skos:broader rdf:resource="http://avoindata.fi/onto/topic#term"/>
-        <skos:prefLabel xml:lang="fi">Kulutus</skos:prefLabel>
-      </skos:Concept>
-    </skos:narrower>
-    <skos:narrower>
-      <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p10">
-        <skos:prefLabel xml:lang="en">Maps</skos:prefLabel>
-        <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p4987"/>
-        <skos:broader rdf:resource="http://avoindata.fi/onto/topic#term"/>
-        <skos:prefLabel xml:lang="fi">Kartat</skos:prefLabel>
-        <skos:prefLabel xml:lang="sv">Kartor</skos:prefLabel>
-        <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptscheme"/>
-      </skos:Concept>
-    </skos:narrower>
-    <skos:narrower>
-      <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p30">
-        <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p2240"/>
-        <skos:prefLabel xml:lang="sv">Vetenskap</skos:prefLabel>
-        <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptscheme"/>
-        <skos:prefLabel xml:lang="fi">Tiede</skos:prefLabel>
-        <skos:prefLabel xml:lang="en">Science</skos:prefLabel>
-        <skos:broader rdf:resource="http://avoindata.fi/onto/topic#term"/>
-      </skos:Concept>
-    </skos:narrower>
-    <skos:narrower>
-      <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p8">
-        <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptscheme"/>
-        <skos:broader rdf:resource="http://avoindata.fi/onto/topic#term"/>
-        <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p775"/>
-        <skos:prefLabel xml:lang="en">Public administration</skos:prefLabel>
-        <skos:prefLabel xml:lang="fi">Julkinen hallinto</skos:prefLabel>
-        <skos:prefLabel xml:lang="sv">Offentlig förvaltning</skos:prefLabel>
-      </skos:Concept>
-    </skos:narrower>
-    <skos:narrower>
-      <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p31">
-        <skos:prefLabel xml:lang="sv">Inkomster</skos:prefLabel>
-        <skos:broader rdf:resource="http://avoindata.fi/onto/topic#term"/>
-        <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptscheme"/>
-        <skos:prefLabel xml:lang="en">Income</skos:prefLabel>
-        <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p941"/>
-        <skos:prefLabel xml:lang="fi">Tulot</skos:prefLabel>
-      </skos:Concept>
-    </skos:narrower>
-    <skos:narrower>
-      <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p5">
-        <skos:prefLabel xml:lang="en">Living conditions</skos:prefLabel>
-        <skos:prefLabel xml:lang="fi">Elinolot</skos:prefLabel>
-        <skos:prefLabel xml:lang="sv">Levnadsförhållanden </skos:prefLabel>
-        <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p10761"/>
-        <skos:broader rdf:resource="http://avoindata.fi/onto/topic#term"/>
-        <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptscheme"/>
-      </skos:Concept>
-    </skos:narrower>
-    <skos:narrower>
-      <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p36">
-        <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p3225"/>
-        <skos:prefLabel xml:lang="sv">Val</skos:prefLabel>
-        <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptscheme"/>
-        <skos:broader rdf:resource="http://avoindata.fi/onto/topic#term"/>
-        <skos:prefLabel xml:lang="fi">Vaalit</skos:prefLabel>
-        <skos:prefLabel xml:lang="en">Elections</skos:prefLabel>
-      </skos:Concept>
-    </skos:narrower>
-    <skos:narrower>
-      <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p42">
-        <skos:prefLabel xml:lang="fi">Yhdyskuntarakenne</skos:prefLabel>
-        <skos:broader rdf:resource="http://avoindata.fi/onto/topic#term"/>
-        <skos:prefLabel xml:lang="sv">Samhällsstruktur</skos:prefLabel>
-        <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptscheme"/>
-        <skos:prefLabel xml:lang="en">Community structure </skos:prefLabel>
-        <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p4183"/>
-      </skos:Concept>
-    </skos:narrower>
-    <skos:narrower>
-      <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p25">
-        <skos:prefLabel xml:lang="fi">Sisäinen turvallisuus</skos:prefLabel>
-        <skos:broader rdf:resource="http://avoindata.fi/onto/topic#term"/>
-        <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptscheme"/>
-        <skos:prefLabel xml:lang="sv">Intern säkerhet</skos:prefLabel>
-        <skos:prefLabel xml:lang="en">Internal security</skos:prefLabel>
-        <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p10360"/>
-      </skos:Concept>
-    </skos:narrower>
-    <skos:narrower>
-      <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p24">
-        <skos:prefLabel xml:lang="sv">Byggande</skos:prefLabel>
-        <skos:broader rdf:resource="http://avoindata.fi/onto/topic#term"/>
-        <skos:prefLabel xml:lang="en">Building</skos:prefLabel>
-        <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptscheme"/>
-        <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p3673"/>
-        <skos:prefLabel xml:lang="fi">Rakentaminen</skos:prefLabel>
-      </skos:Concept>
-    </skos:narrower>
-    <skos:narrower>
-      <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p9">
-        <skos:prefLabel xml:lang="fi">Kansainväliset suhteet</skos:prefLabel>
-        <skos:prefLabel xml:lang="en">International relations</skos:prefLabel>
-        <skos:prefLabel xml:lang="sv">Internationella relationer</skos:prefLabel>
-        <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptscheme"/>
-        <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p5209"/>
-        <skos:broader rdf:resource="http://avoindata.fi/onto/topic#term"/>
-      </skos:Concept>
-    </skos:narrower>
-    <skos:narrower>
-      <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p6">
-        <skos:prefLabel xml:lang="en">Energy management </skos:prefLabel>
-        <skos:broader rdf:resource="http://avoindata.fi/onto/topic#term"/>
-        <skos:prefLabel xml:lang="fi">Energiahuolto</skos:prefLabel>
-        <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptscheme"/>
-        <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p4953"/>
-        <skos:prefLabel xml:lang="sv">Energiförsörjning </skos:prefLabel>
-      </skos:Concept>
-    </skos:narrower>
-    <skos:narrower>
-      <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p43">
-        <skos:prefLabel xml:lang="fi">Ympäristö</skos:prefLabel>
-        <skos:prefLabel xml:lang="sv">Miljö</skos:prefLabel>
-        <skos:prefLabel xml:lang="en">Environment</skos:prefLabel>
-        <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p6033"/>
-        <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptscheme"/>
-        <skos:broader rdf:resource="http://avoindata.fi/onto/topic#term"/>
-      </skos:Concept>
-    </skos:narrower>
-    <skos:narrower>
-      <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p37">
-        <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p15617"/>
-        <skos:prefLabel xml:lang="en">State economy</skos:prefLabel>
-        <skos:prefLabel xml:lang="sv">Statsekonomi </skos:prefLabel>
-        <skos:broader rdf:resource="http://avoindata.fi/onto/topic#term"/>
-        <skos:prefLabel xml:lang="fi">Valtiontalous</skos:prefLabel>
-        <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptscheme"/>
-      </skos:Concept>
-    </skos:narrower>
-    <skos:narrower>
-      <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p35">
-        <skos:broader rdf:resource="http://avoindata.fi/onto/topic#term"/>
-        <skos:prefLabel xml:lang="en">Outdoor recreation</skos:prefLabel>
-        <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptscheme"/>
-        <skos:prefLabel xml:lang="fi">Ulkoilu</skos:prefLabel>
-        <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p2771"/>
-        <skos:prefLabel xml:lang="sv">Friluftsliv </skos:prefLabel>
-      </skos:Concept>
-    </skos:narrower>
-    <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptscheme"/>
-    <skos:narrower>
-      <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p16">
-        <skos:prefLabel xml:lang="sv">Trafik</skos:prefLabel>
-        <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p3466"/>
-        <skos:prefLabel xml:lang="en">Traffic</skos:prefLabel>
-        <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptscheme"/>
-        <skos:broader rdf:resource="http://avoindata.fi/onto/topic#term"/>
-        <skos:prefLabel xml:lang="fi">Liikenne</skos:prefLabel>
-      </skos:Concept>
-    </skos:narrower>
-    <skos:narrower>
-      <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p23">
-        <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p8743"/>
-        <skos:broader rdf:resource="http://avoindata.fi/onto/topic#term"/>
-        <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptscheme"/>
-        <skos:prefLabel xml:lang="fi">Päätöksenteko</skos:prefLabel>
-        <skos:prefLabel xml:lang="sv">Beslutsfattande </skos:prefLabel>
-        <skos:prefLabel xml:lang="en">Decision-making</skos:prefLabel>
-      </skos:Concept>
-    </skos:narrower>
-    <skos:narrower>
-      <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p38">
-        <skos:prefLabel xml:lang="sv">Beskattning </skos:prefLabel>
-        <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p1082"/>
-        <skos:prefLabel xml:lang="fi">Verotus</skos:prefLabel>
-        <skos:prefLabel xml:lang="en">Taxation</skos:prefLabel>
-        <skos:broader rdf:resource="http://avoindata.fi/onto/topic#term"/>
-        <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptscheme"/>
-      </skos:Concept>
-    </skos:narrower>
-    <skos:narrower>
-      <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p7">
-        <skos:prefLabel xml:lang="sv">Välmående</skos:prefLabel>
-        <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptscheme"/>
-        <skos:prefLabel xml:lang="fi">Hyvinvointi</skos:prefLabel>
-        <skos:prefLabel xml:lang="en">Well-being</skos:prefLabel>
-        <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p22036"/>
-        <skos:broader rdf:resource="http://avoindata.fi/onto/topic#term"/>
-      </skos:Concept>
-    </skos:narrower>
-    <skos:prefLabel xml:lang="fi">olio</skos:prefLabel>
-    <skos:narrower>
-      <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p27">
-        <skos:broader rdf:resource="http://avoindata.fi/onto/topic#term"/>
-        <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptscheme"/>
-        <skos:prefLabel xml:lang="fi">Talous</skos:prefLabel>
-        <skos:prefLabel xml:lang="sv">Ekonomi</skos:prefLabel>
-        <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p2555"/>
-        <skos:prefLabel xml:lang="en">Economy</skos:prefLabel>
-      </skos:Concept>
-    </skos:narrower>
+    </skos:inScheme>
+    <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p1911"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p14">
+    <skos:broader rdf:resource="http://avoindata.fi/onto/topic"/>
+    <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptScheme"/>
+    <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p8574"/>
+    <skos:prefLabel xml:lang="en">Consumption</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">Kulutus</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">Konsumtion</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p16">
+    <skos:prefLabel xml:lang="en">Traffic</skos:prefLabel>
+    <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p3466"/>
+    <skos:prefLabel xml:lang="fi">Liikenne</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptScheme"/>
+    <skos:prefLabel xml:lang="sv">Trafik</skos:prefLabel>
+    <skos:broader rdf:resource="http://avoindata.fi/onto/topic"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p44">
+    <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptScheme"/>
+    <skos:prefLabel xml:lang="fi">Yritykset</skos:prefLabel>
+    <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p3128"/>
+    <skos:prefLabel xml:lang="en">Businesses</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">Företag</skos:prefLabel>
+    <skos:broader rdf:resource="http://avoindata.fi/onto/topic"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p13">
+    <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptScheme"/>
+    <skos:prefLabel xml:lang="sv">Kultur</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">Kulttuuri</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Culture</skos:prefLabel>
+    <skos:broader rdf:resource="http://avoindata.fi/onto/topic"/>
+    <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p372"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p33">
+    <skos:prefLabel xml:lang="fi">Työ</skos:prefLabel>
+    <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p1810"/>
+    <skos:prefLabel xml:lang="sv">Arbete</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptScheme"/>
+    <skos:broader rdf:resource="http://avoindata.fi/onto/topic"/>
+    <skos:prefLabel xml:lang="en">Work</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p38">
+    <skos:prefLabel xml:lang="fi">Verotus</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">Beskattning</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptScheme"/>
+    <skos:prefLabel xml:lang="en">Taxation</skos:prefLabel>
+    <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p1082"/>
+    <skos:broader rdf:resource="http://avoindata.fi/onto/topic"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p26">
+    <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptScheme"/>
+    <skos:prefLabel xml:lang="sv">Social service</skos:prefLabel>
+    <skos:broader rdf:resource="http://avoindata.fi/onto/topic"/>
+    <skos:prefLabel xml:lang="fi">Sosiaalipalvelut</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Social services</skos:prefLabel>
+    <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p1307"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p3">
+    <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptScheme"/>
+    <skos:prefLabel xml:lang="fi">Demokratia</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">Demokrati</skos:prefLabel>
+    <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p742"/>
+    <skos:prefLabel xml:lang="en">Democracy</skos:prefLabel>
+    <skos:broader rdf:resource="http://avoindata.fi/onto/topic"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p10">
+    <skos:broader rdf:resource="http://avoindata.fi/onto/topic"/>
+    <skos:prefLabel xml:lang="en">Maps</skos:prefLabel>
+    <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p4987"/>
+    <skos:prefLabel xml:lang="fi">Kartat</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptScheme"/>
+    <skos:prefLabel xml:lang="sv">Kartor</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p36">
+    <skos:prefLabel xml:lang="fi">Vaalit</skos:prefLabel>
+    <skos:broader rdf:resource="http://avoindata.fi/onto/topic"/>
+    <skos:prefLabel xml:lang="en">Elections</skos:prefLabel>
+    <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p3225"/>
+    <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptScheme"/>
+    <skos:prefLabel xml:lang="sv">Val</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p25">
+    <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p10360"/>
+    <skos:prefLabel xml:lang="fi">Sisäinen turvallisuus</skos:prefLabel>
+    <skos:broader rdf:resource="http://avoindata.fi/onto/topic"/>
+    <skos:prefLabel xml:lang="en">Internal security</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">Intern säkerhet</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptScheme"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p42">
+    <skos:prefLabel xml:lang="fi">Yhdyskuntarakenne</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptScheme"/>
+    <skos:prefLabel xml:lang="en">Community structure</skos:prefLabel>
+    <skos:broader rdf:resource="http://avoindata.fi/onto/topic"/>
+    <skos:prefLabel xml:lang="sv">Samhällsstruktur</skos:prefLabel>
+    <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p4183"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p7">
+    <skos:prefLabel xml:lang="sv">Välmående</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">Hyvinvointi</skos:prefLabel>
+    <skos:broader rdf:resource="http://avoindata.fi/onto/topic"/>
+    <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptScheme"/>
+    <skos:prefLabel xml:lang="en">Well-being</skos:prefLabel>
+    <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p22036"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p30">
+    <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p2240"/>
+    <skos:prefLabel xml:lang="fi">Tiede</skos:prefLabel>
+    <skos:broader rdf:resource="http://avoindata.fi/onto/topic"/>
+    <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptScheme"/>
+    <skos:prefLabel xml:lang="sv">Vetenskap</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Science</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p12">
+    <skos:prefLabel xml:lang="en">Education and training</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptScheme"/>
+    <skos:prefLabel xml:lang="fi">Koulutus</skos:prefLabel>
+    <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p84"/>
+    <skos:prefLabel xml:lang="sv">Utbildning</skos:prefLabel>
+    <skos:broader rdf:resource="http://avoindata.fi/onto/topic"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p1">
+    <skos:broader rdf:resource="http://avoindata.fi/onto/topic"/>
+    <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptScheme"/>
+    <skos:closeMatch rdf:resource="http://www.yso.fi/onto/yso/p763"/>
+    <skos:prefLabel xml:lang="en">Plans</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">Mönster</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">Asemakaavat</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p32">
+    <skos:prefLabel xml:lang="fi">Turvallisuus</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Security</skos:prefLabel>
+    <skos:broader rdf:resource="http://avoindata.fi/onto/topic"/>
+    <skos:prefLabel xml:lang="sv">Trygghet</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptScheme"/>
+    <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p7349"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p17">
+    <skos:prefLabel xml:lang="fi">Liikunta</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Physical training</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptScheme"/>
+    <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p916"/>
+    <skos:broader rdf:resource="http://avoindata.fi/onto/topic"/>
+    <skos:prefLabel xml:lang="sv">Motion</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p40">
+    <skos:prefLabel xml:lang="fi">Viestintä</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">Kommunikation</skos:prefLabel>
+    <skos:broader rdf:resource="http://avoindata.fi/onto/topic"/>
+    <skos:prefLabel xml:lang="en">Communication</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptScheme"/>
+    <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p36"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p21">
+    <skos:prefLabel xml:lang="sv">Undervisning</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">Opetus</skos:prefLabel>
+    <skos:broader rdf:resource="http://avoindata.fi/onto/topic"/>
+    <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptScheme"/>
+    <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p2630"/>
+    <skos:prefLabel xml:lang="en">Teaching</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p8">
+    <skos:prefLabel xml:lang="en">Public administration</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptScheme"/>
+    <skos:prefLabel xml:lang="sv">Offentlig förvaltning</skos:prefLabel>
+    <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p775"/>
+    <skos:prefLabel xml:lang="fi">Julkinen hallinto</skos:prefLabel>
+    <skos:broader rdf:resource="http://avoindata.fi/onto/topic"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p15">
+    <skos:broader rdf:resource="http://avoindata.fi/onto/topic"/>
+    <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptScheme"/>
+    <skos:prefLabel xml:lang="sv">Lagar</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Laws</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">Lait</skos:prefLabel>
+    <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p1464"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p2">
+    <skos:prefLabel xml:lang="fi">Asuminen</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Housing</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptScheme"/>
+    <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p1797"/>
+    <skos:prefLabel xml:lang="sv">Boende</skos:prefLabel>
+    <skos:broader rdf:resource="http://avoindata.fi/onto/topic"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p41">
+    <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptScheme"/>
+    <skos:prefLabel xml:lang="en">Population</skos:prefLabel>
+    <skos:broader rdf:resource="http://avoindata.fi/onto/topic"/>
+    <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p4207"/>
+    <skos:prefLabel xml:lang="sv">Befolkning</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">Väestö</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p23">
+    <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptScheme"/>
+    <skos:prefLabel xml:lang="fi">Päätöksenteko</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">Beslutsfattande</skos:prefLabel>
+    <skos:broader rdf:resource="http://avoindata.fi/onto/topic"/>
+    <skos:prefLabel xml:lang="en">Decision-making</skos:prefLabel>
+    <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p8743"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p18">
+    <skos:broader rdf:resource="http://avoindata.fi/onto/topic"/>
+    <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p13084"/>
+    <skos:prefLabel xml:lang="en">Nature</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">Luonto</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptScheme"/>
+    <skos:prefLabel xml:lang="sv">Naturen</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p31">
+    <skos:broader rdf:resource="http://avoindata.fi/onto/topic"/>
+    <skos:prefLabel xml:lang="en">Income</skos:prefLabel>
+    <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p941"/>
+    <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptScheme"/>
+    <skos:prefLabel xml:lang="sv">Inkomster</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">Tulot</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p35">
+    <skos:broader rdf:resource="http://avoindata.fi/onto/topic"/>
+    <skos:prefLabel xml:lang="en">Outdoor recreation</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptScheme"/>
+    <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p2771"/>
+    <skos:prefLabel xml:lang="fi">Ulkoilu</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">Friluftsliv</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p27">
+    <skos:prefLabel xml:lang="fi">Talous</skos:prefLabel>
+    <skos:broader rdf:resource="http://avoindata.fi/onto/topic"/>
+    <skos:prefLabel xml:lang="en">Economy</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptScheme"/>
+    <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p2555"/>
+    <skos:prefLabel xml:lang="sv">Ekonomi</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p24">
+    <skos:prefLabel xml:lang="fi">Rakentaminen</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">Byggande</skos:prefLabel>
+    <skos:broader rdf:resource="http://avoindata.fi/onto/topic"/>
+    <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptScheme"/>
+    <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p3673"/>
+    <skos:prefLabel xml:lang="en">Building</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p37">
+    <skos:prefLabel xml:lang="sv">Statsekonomi</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">Valtiontalous</skos:prefLabel>
+    <skos:broader rdf:resource="http://avoindata.fi/onto/topic"/>
+    <skos:prefLabel xml:lang="en">State economy</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptScheme"/>
+    <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p15617"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p9">
+    <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p5209"/>
+    <skos:prefLabel xml:lang="en">International relations</skos:prefLabel>
+    <skos:broader rdf:resource="http://avoindata.fi/onto/topic"/>
+    <skos:prefLabel xml:lang="fi">Kansainväliset suhteet</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptScheme"/>
+    <skos:prefLabel xml:lang="sv">Internationella relationer</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p43">
+    <skos:prefLabel xml:lang="en">Environment</skos:prefLabel>
+    <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p6033"/>
+    <skos:broader rdf:resource="http://avoindata.fi/onto/topic"/>
+    <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptScheme"/>
+    <skos:prefLabel xml:lang="sv">Miljö</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">Ympäristö</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p6">
+    <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptScheme"/>
+    <skos:prefLabel xml:lang="sv">Energiförsörjning</skos:prefLabel>
+    <skos:broader rdf:resource="http://avoindata.fi/onto/topic"/>
+    <skos:prefLabel xml:lang="en">Energy management</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">Energiahuolto</skos:prefLabel>
+    <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p4953"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p28">
+    <skos:prefLabel xml:lang="en">Technology</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">Teknologi</skos:prefLabel>
+    <skos:broader rdf:resource="http://avoindata.fi/onto/topic"/>
+    <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p2339"/>
+    <skos:prefLabel xml:lang="fi">Teknologia</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptScheme"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p5">
+    <skos:prefLabel xml:lang="fi">Elinolot</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptScheme"/>
+    <skos:prefLabel xml:lang="sv">Levnadsförhållanden</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Living conditions</skos:prefLabel>
+    <skos:broader rdf:resource="http://avoindata.fi/onto/topic"/>
+    <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p10761"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p19">
+    <skos:prefLabel xml:lang="en">Direction</skos:prefLabel>
+    <skos:broader rdf:resource="http://avoindata.fi/onto/topic"/>
+    <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p16877"/>
+    <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptScheme"/>
+    <skos:prefLabel xml:lang="sv">Styrning</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">Ohjaus</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p11">
+    <skos:prefLabel xml:lang="fi">Kiinteistöt</skos:prefLabel>
+    <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p6712"/>
+    <skos:broader rdf:resource="http://avoindata.fi/onto/topic"/>
+    <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptScheme"/>
+    <skos:prefLabel xml:lang="en">Real estates</skos:prefLabel>
+    <skos:prefLabel xml:lang="sv">Fastigheter</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p39">
+    <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p9681"/>
+    <skos:prefLabel xml:lang="fi">Vesihuolto</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptScheme"/>
+    <skos:broader rdf:resource="http://avoindata.fi/onto/topic"/>
+    <skos:prefLabel xml:lang="sv">Vatten och avlopp</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Water supply and sewerage</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p4">
+    <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p1764"/>
+    <skos:prefLabel xml:lang="en">Means of livelihood</skos:prefLabel>
+    <skos:prefLabel xml:lang="fi">Elinkeinot</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptScheme"/>
+    <skos:broader rdf:resource="http://avoindata.fi/onto/topic"/>
+    <skos:prefLabel xml:lang="sv">Näringar</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p34">
+    <skos:prefLabel xml:lang="fi">Työmarkkinat</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Labour market</skos:prefLabel>
+    <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p8831"/>
+    <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptScheme"/>
+    <skos:broader rdf:resource="http://avoindata.fi/onto/topic"/>
+    <skos:prefLabel xml:lang="sv">Arbetsmarknaden</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p22">
+    <skos:prefLabel xml:lang="fi">Puolustus</skos:prefLabel>
+    <skos:broader rdf:resource="http://avoindata.fi/onto/topic"/>
+    <skos:prefLabel xml:lang="sv">Försvar</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Defence</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptScheme"/>
+    <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p4552"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://avoindata.fi/onto/topic#p29">
+    <skos:prefLabel xml:lang="fi">Terveys</skos:prefLabel>
+    <skos:broader rdf:resource="http://avoindata.fi/onto/topic"/>
+    <skos:prefLabel xml:lang="en">Health</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://avoindata.fi/onto/topic/conceptScheme"/>
+    <skos:prefLabel xml:lang="sv">Hälsa</skos:prefLabel>
+    <skos:exactMatch rdf:resource="http://www.yso.fi/onto/yso/p2762"/>
   </skos:Concept>
 </rdf:RDF>
