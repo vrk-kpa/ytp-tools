@@ -33,7 +33,7 @@ class YtpDevelopMain(object):
         return 0
 
     def develop_assets(self, name):
-        return self._replace_with_link("/var/www/shared", "/src/ytp-assets-common/distribution")
+        return self._replace_with_link("/var/www/resources", "/src/ytp-assets-common/resources")
 
     def develop_drupal(self, name):
         return self._replace_with_link("/var/www/ytp/sites/all/themes/ytp_theme", "/src/ytp-theme-drupal")
