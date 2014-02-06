@@ -1,13 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-''' This script parses Excel spreadsheets into RDF/SKOS vocabularies '''
+"""This script parses Excel spreadsheets into RDF/SKOS vocabularies."""
 
 import logging
 import sys
 import pandas
-import numpy
-from rdflib import Graph, Literal, Namespace, RDF, RDFS, URIRef
+from rdflib import Graph, Literal, URIRef
 from rdflib.namespace import RDF, RDFS, SKOS, DC
 
 logging.basicConfig()
@@ -15,100 +14,106 @@ logging.basicConfig()
 uri_prefix = "http://avoindata.fi/onto/"
 uri_common_part = "#p"
 
-# Parse Excel spreadsheet and create SKOS vocabularies from each sheet
+
 def convert_spreadsheet_into_vocabularies(filename):
+    """Parse Excel spreadsheet and create SKOS vocabularies from each sheet."""
 
-  vocabs = [
-    {'sheet': 'AIHE', 'vocabulary_name': 'topic', 'metadata_sheet':'Ontologian metatiedot'},
-    {'sheet': u'SISÄLTÖTYYPPI', 'vocabulary_name': 'contentType', 'metadata_sheet':'Ontologian metatiedot'},
-  ]
-  
-  for vocab in vocabs:
+    vocabs = [
+        {'sheet': 'AIHE', 'vocabulary_name': 'topic', 'metadata_sheet': 'Ontologian metatiedot'},
+        {'sheet': u'SISÄLTÖTYYPPI', 'vocabulary_name': 'contentType', 'metadata_sheet': 'Ontologian metatiedot'},
+    ]
 
-    graph = Graph()
-    graph.bind('skos', SKOS)
-    graph.bind('rdfs', RDFS)
-    graph.bind('dc11', DC)
+    for vocab in vocabs:
 
-    parse_concepts_from_sheet(graph, vocab['vocabulary_name'], pandas.read_excel(filename, vocab['sheet'], index_col='ID'))
-    parse_metadata_from_sheet(graph, vocab['vocabulary_name'], pandas.read_excel(filename, vocab['metadata_sheet']))
-    serialize_vocab_into_file(graph, vocab['vocabulary_name'])
+        graph = Graph()
+        graph.bind('skos', SKOS)
+        graph.bind('rdfs', RDFS)
+        graph.bind('dc11', DC)
 
-  return
+        parse_concepts_from_sheet(graph, vocab['vocabulary_name'], pandas.read_excel(filename, vocab['sheet'], index_col='ID'))
+        parse_metadata_from_sheet(graph, vocab['vocabulary_name'], pandas.read_excel(filename, vocab['metadata_sheet']))
+        serialize_vocab_into_file(graph, vocab['vocabulary_name'])
+
+    return
 
 
-# Parse vocabulary concepts from spreadsheet and into a graph
 def parse_concepts_from_sheet(graph, vocabulary_name, sheet_data):
-  base_uri = uri_prefix + vocabulary_name
+    """Parse vocabulary concepts from spreadsheet and into a graph."""
 
-  for index, row in sheet_data.iterrows():
+    base_uri = uri_prefix + vocabulary_name
 
-    concept = URIRef(base_uri + uri_common_part + str(index))
-    graph.add((concept, RDF.type, SKOS.Concept))
-    graph.add((concept, SKOS.inScheme, URIRef(base_uri + '/conceptScheme')))
+    for index, row in sheet_data.iterrows():
 
-    graph.add((concept, SKOS.broader, URIRef(base_uri)))
-    graph.add((URIRef(base_uri), SKOS.narrower, concept))
+        concept = URIRef(base_uri + uri_common_part + str(index))
+        graph.add((concept, RDF.type, SKOS.Concept))
+        graph.add((concept, SKOS.inScheme, URIRef(base_uri + '/conceptScheme')))
 
-    graph.add((concept, SKOS.prefLabel, Literal(row['Suomeksi'].rstrip(), lang='fi')))
-    graph.add((concept, SKOS.prefLabel, Literal(row['Englanniksi'].rstrip(), lang='en')))
-    graph.add((concept, SKOS.prefLabel, Literal(row['Ruotsiksi'].rstrip(), lang='sv')))
+        graph.add((concept, SKOS.broader, URIRef(base_uri)))
+        graph.add((URIRef(base_uri), SKOS.narrower, concept))
 
-    if pandas.notnull(row[u'Synonyymi (YSO)']):
-      graph.add((concept, SKOS.exactMatch, URIRef(str(row['Synonyymi (YSO)']))))
+        graph.add((concept, SKOS.prefLabel, Literal(row['Suomeksi'].rstrip(), lang='fi')))
+        graph.add((concept, SKOS.prefLabel, Literal(row['Englanniksi'].rstrip(), lang='en')))
+        graph.add((concept, SKOS.prefLabel, Literal(row['Ruotsiksi'].rstrip(), lang='sv')))
 
-    if pandas.notnull(row[u'Läheinen käsite']):
-      graph.add((concept, SKOS.closeMatch, URIRef(str(row[u'Läheinen käsite']))))
+        if pandas.notnull(row[u'Synonyymi (YSO)']):
+            graph.add((concept, SKOS.exactMatch, URIRef(str(row['Synonyymi (YSO)']))))
 
-  return
+        if pandas.notnull(row[u'Läheinen käsite']):
+            graph.add((concept, SKOS.closeMatch, URIRef(str(row[u'Läheinen käsite']))))
 
-# Parse metadata regarding the SKOS vocabulary itself from a spreadsheet and into a graph
+    return
+
+
 def parse_metadata_from_sheet(graph, vocabulary_name, sheet_data):
+    """Parse metadata regarding the SKOS vocabulary itself from a spreadsheet and into a graph."""
 
-  base_uri = uri_prefix + vocabulary_name
+    base_uri = uri_prefix + vocabulary_name
 
-  concept_scheme = URIRef(base_uri + '/conceptScheme')
-  graph.add((concept_scheme, RDF.type, SKOS.ConceptScheme))
+    concept_scheme = URIRef(base_uri + '/conceptScheme')
+    graph.add((concept_scheme, RDF.type, SKOS.ConceptScheme))
 
-  meta_to_triples(graph, concept_scheme, DC.publisher, 'Publisher', sheet_data)
-  meta_to_triples(graph, concept_scheme, DC.title, 'Title/label', sheet_data)
-  meta_to_triples(graph, concept_scheme, SKOS.prefLabel, 'Title/label', sheet_data)
-  meta_to_triples(graph, concept_scheme, DC.description, 'Description', sheet_data)
-  graph.add((concept_scheme, DC.license, URIRef(str(sheet_data.ix['License','SUOMI']))))
+    meta_to_triples(graph, concept_scheme, DC.publisher, 'Publisher', sheet_data)
+    meta_to_triples(graph, concept_scheme, DC.title, 'Title/label', sheet_data)
+    meta_to_triples(graph, concept_scheme, SKOS.prefLabel, 'Title/label', sheet_data)
+    meta_to_triples(graph, concept_scheme, DC.description, 'Description', sheet_data)
+    graph.add((concept_scheme, DC.license, URIRef(str(sheet_data.ix['License', 'SUOMI']))))
 
-  # Create top concept that ties all terms together
-  top_term = URIRef(base_uri)
-  graph.add((top_term, RDF.type, SKOS.Concept))
-  graph.add((top_term, SKOS.topConceptOf, concept_scheme))
-  graph.add((concept_scheme, SKOS.hasTopConcept, top_term))
-  graph.add((top_term, SKOS.prefLabel, Literal(vocabulary_name, lang='en')))
-  graph.add((top_term, SKOS.inScheme, concept_scheme))
+    # Create top concept that ties all terms together
+    top_term = URIRef(base_uri)
+    graph.add((top_term, RDF.type, SKOS.Concept))
+    graph.add((top_term, SKOS.topConceptOf, concept_scheme))
+    graph.add((concept_scheme, SKOS.hasTopConcept, top_term))
+    graph.add((top_term, SKOS.prefLabel, Literal(vocabulary_name, lang='en')))
+    graph.add((top_term, SKOS.inScheme, concept_scheme))
 
-  return
+    return
 
-# Convert multilingual metadata fields into triples. This trims trailing whitespace from labels
+
 def meta_to_triples(graph, subject, predicate, metafield, sheet_data):
+    """Convert multilingual metadata fields into triples. This trims trailing whitespace from labels."""
 
-  # Known issue: this does not handle correctly cells that have only whitespace in them
-  if pandas.notnull(sheet_data.ix[metafield,'SUOMI']):
-    graph.add((subject, predicate, Literal(sheet_data.ix[metafield,'SUOMI'].rstrip(), lang='fi')))
-  if pandas.notnull(sheet_data.ix[metafield,'ENGLANTI']):
-    graph.add((subject, predicate, Literal(sheet_data.ix[metafield,'ENGLANTI'].rstrip(), lang='en')))
-  if pandas.notnull(sheet_data.ix[metafield,'RUOTSI']):
-    graph.add((subject, predicate, Literal(sheet_data.ix[metafield,'RUOTSI'].rstrip(), lang='sv')))
+    # Known issue: this does not handle correctly cells that have only whitespace in them
+    if pandas.notnull(sheet_data.ix[metafield, 'SUOMI']):
+        graph.add((subject, predicate, Literal(sheet_data.ix[metafield, 'SUOMI'].rstrip(), lang='fi')))
+    if pandas.notnull(sheet_data.ix[metafield, 'ENGLANTI']):
+        graph.add((subject, predicate, Literal(sheet_data.ix[metafield, 'ENGLANTI'].rstrip(), lang='en')))
+    if pandas.notnull(sheet_data.ix[metafield, 'RUOTSI']):
+        graph.add((subject, predicate, Literal(sheet_data.ix[metafield, 'RUOTSI'].rstrip(), lang='sv')))
 
-  return
+    return
 
-# Serialize vocabulary as RDF/XML into a file
+
 def serialize_vocab_into_file(graph, vocabulary_name):
-  filename = 'avoindatafi_' + vocabulary_name + '.rdf'
-  graph.serialize(filename, format='pretty-xml')
-  print "Wrote file", filename
+    """Serialize vocabulary as RDF/XML into a file."""
 
-  return
+    filename = 'avoindatafi_' + vocabulary_name + '.rdf'
+    graph.serialize(filename, format='pretty-xml')
+    print "Wrote file", filename
+
+    return
 
 
 if __name__ == "__main__":
-  # Must get filename as arg
-  assert len(sys.argv) == 2
-  convert_spreadsheet_into_vocabularies(sys.argv[1])
+    # Must get filename as arg
+    assert len(sys.argv) == 2
+    convert_spreadsheet_into_vocabularies(sys.argv[1])
