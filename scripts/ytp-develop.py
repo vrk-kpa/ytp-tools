@@ -11,7 +11,7 @@ import shutil
 
 
 class YtpDevelopMain(object):
-    source_path = "/src"
+    source_path = "/src/modules"
     virtual_environment = "/usr/lib/ckan/default"
     _mappings = None
 
