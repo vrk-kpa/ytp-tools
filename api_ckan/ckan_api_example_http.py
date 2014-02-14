@@ -189,10 +189,6 @@ def log_response(response):
 
 if __name__ == '__main__':
 
-    # usage: scriptname url_path_to_api api_key
-    # url: Includes trailing foreward slash!
-    # apikey
-
     usage = "\
     Usage: ./ckan_api_example.py API_URL API_KEY\n\
     API_URL: Url to CKAN API including api directory without trailing foreward slash,\n\
@@ -212,8 +208,8 @@ if __name__ == '__main__':
 
     log.info("Now using API URL " + api_url)
 
-    organization_name = "aaa_org_tenth"
-    dataset_name = "aaa_set_tenth"
+    organization_name = "aaa_org_test"
+    dataset_name = "aaa_set_test"
 
     log.info("TEST 1")
     create_organization(organization_name, api_url, api_key)

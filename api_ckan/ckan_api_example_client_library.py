@@ -33,11 +33,10 @@ if __name__ == '__main__':
     
     # Collect the package metadata.
     package_entity = {
-        'name': my_package_name,
-        'url': my_package_url,
-        'download_url': my_package_download_url,
-        'tags': my_package_keywords,
-        'notes': my_package_long_description,
+        'name': "AAA Test dataset",
+        'url': "http://alpha.avoindata.fi/url_of_test_dataset",
+        'download_url': "http://alpha.avoindata.fi/download_url_of_test_dataset",
+        'notes': "This is the description of a test dataset",
     }
 
     # Register the package.

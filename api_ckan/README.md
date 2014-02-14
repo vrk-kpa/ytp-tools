@@ -40,7 +40,7 @@ To try out the examples, run the scripts using your API key:
 
 ## Disclaimer
 
-As this is a development version of the service, any data you import to the service can become lost at any time without notice. Furthermore, the software of the alpha server is deployed daily (sometimes several times per day) from the master branch, so it is excepted that the server is sometimes down and things will break. However, the API should be much more stable and less buggy than the web interface.
+As this is a development version of the service, any data you import/create in the service can be lost without notice at any time. Furthermore, new software is deployed daily (sometimes several times per day) to the alpha server from the master branch, so it is excepted that the server is sometimes down and things will break. However, the API should be much more stable and less buggy than the web interface.
 
 ## Help and support
 
@@ -50,7 +50,9 @@ If you want a more mature and stable, but more generic CKAN playground, you can 
 
 * [CKAN API documentation][ckanapi]
 * [CKAN API client library and CLI][ckanclient]
+* [CKAN API client libraries in other languages (old docs, might be obsolete)][otherclients]
 
 [ckanapi]: http://docs.ckan.org/en/latest/api/index.html
 [ckanclient]: https://github.com/okfn/ckanclient
 [requests]: http://requests.readthedocs.org/en/latest/
+[otherclients]: http://docs.ckan.org/en/ckan-1.7.1/api.html#clients
