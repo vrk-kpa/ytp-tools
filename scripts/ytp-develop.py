@@ -8,6 +8,7 @@ import types
 import subprocess
 import os
 import shutil
+import getpass
 
 
 class YtpDevelopMain(object):
@@ -68,6 +69,10 @@ class YtpDevelopMain(object):
         return None
 
     def main(self, arguments):
+        if getpass.getuser() != 'root':
+            print "You must run this script as root"
+            exit(3)
+
         if len(arguments) != 2:
             print u"Usage: %s <project-name>\n       %s --list\n       %s --serve" % (arguments[0], arguments[0], arguments[0])
             exit(2)
