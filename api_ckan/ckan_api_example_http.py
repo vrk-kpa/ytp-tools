@@ -11,7 +11,6 @@ also list some tools and libs for accessing the API.
 import logging
 import requests
 import json
-import re
 import sys
 
 
@@ -25,7 +24,7 @@ def look_for_ckan_api(base_url):
 
     best_version_found = 0
 
-    for version in range(1,4):
+    for version in range(1, 4):
         try:
             r = requests.get(base_url + str(version))
             try:
@@ -79,7 +78,7 @@ def get_organization(organization_name, api_url, api_key):
         'authorization': api_key
     }
 
-    r = requests.get(request_url, params=request_payload)
+    r = requests.get(request_url, params=request_payload, headers=request_headers)
     log_response(r)
 
     return
@@ -115,15 +114,15 @@ def create_dataset(dataset_name, organization_name, api_url, api_key):
         'owner_org': organization_name,
         'notes': 'A temporary test dataset that can be deleted at any possible time',
         'extras': [
-            {'key': 'firstkey', 'value': 'firstvalue'}, 
-            {'key': 'secondkey', 'value': 'secondvalue'}, 
+            {'key': 'firstkey', 'value': 'firstvalue'},
+            {'key': 'secondkey', 'value': 'secondvalue'},
             {'key': 'thirdkey', 'value': 'thirdvalue'}
             ]
     }
     request_headers = {
         'authorization': api_key,
         'content-type': 'application/json'
-    }    
+    }
 
     r = requests.post(request_url, data=json.dumps(request_payload), headers=request_headers)
     log_response(r)
@@ -143,7 +142,7 @@ def get_dataset(dataset_name, api_url, api_key):
         'authorization': api_key
     }
 
-    r = requests.get(request_url, params=request_payload)
+    r = requests.get(request_url, params=request_payload, headers=request_headers)
     log_response(r)
 
     return

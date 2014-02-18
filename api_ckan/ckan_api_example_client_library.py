@@ -30,10 +30,12 @@ if __name__ == '__main__':
     # Get the package list.
     package_list = ckan.package_register_get()
     print package_list
-    
+
+    package_name = "AAA Test dataset"
+
     # Collect the package metadata.
     package_entity = {
-        'name': "AAA Test dataset",
+        'name': package_name,
         'url': "http://alpha.avoindata.fi/url_of_test_dataset",
         'download_url': "http://alpha.avoindata.fi/download_url_of_test_dataset",
         'notes': "This is the description of a test dataset",
@@ -50,6 +52,6 @@ if __name__ == '__main__':
     # Update the details of a package.
     ckan.package_entity_get(package_name)
     package_entity = ckan.last_message
-    package_entity['url'] = new_package_url
-    package_entity['notes'] = new_package_notes
+    package_entity['url'] = "http://alpha.avoindata.fi/new_url_of_test_dataset",
+    package_entity['notes'] = "This is the updated description of a test dataset"
     ckan.package_entity_put(package_entity)
