@@ -47,7 +47,8 @@ class YtpDevelopMain(object):
 
     def paster_serve(self, name=None):
         subprocess.call(["/usr/sbin/ufw", "allow", "5000"])
-        process_arguments = ["/usr/bin/sudo", "-u", "www-data", os.path.join(self.virtual_environment, "bin/paster"), "serve", "/etc/ckan/default/production.ini"]
+        process_arguments = ["/usr/bin/sudo", "-u", "www-data", os.path.join(self.virtual_environment, "bin/paster"), "serve",
+                             "/etc/ckan/default/production.ini"]
         process = subprocess.Popen(process_arguments)
         try:
             process.wait()  # exit via ctrl-c
