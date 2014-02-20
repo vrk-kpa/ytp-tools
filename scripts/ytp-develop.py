@@ -40,9 +40,9 @@ class YtpDevelopMain(object):
         return self._replace_with_link("/var/www/ytp/sites/all/themes/ytp_theme", "/src/modules/ytp-theme-drupal")
 
     def list_projects(self, name=None):
-        for name in os.listdir(self.source_path):
-            if os.path.isdir(os.path.join(self.source_path, name)) and self._get_mapping(name):
-                print name
+        for project_name in os.listdir(self.source_path):
+            if os.path.isdir(os.path.join(self.source_path, project_name)) and self._get_mapping(project_name):
+                print project_name
         return 0
 
     def paster_serve(self, name=None):
@@ -74,7 +74,9 @@ class YtpDevelopMain(object):
             exit(3)
 
         if len(arguments) != 2:
-            print u"Usage: %s <project-name>\n       %s --list\n       %s --serve" % (arguments[0], arguments[0], arguments[0])
+            print u"Usage: %s <project-name>\n       %s --list\n       %s --serve\n" % (arguments[0], arguments[0], arguments[0])
+            print u"Available projects:\n"
+            self.list_projects()
             exit(2)
 
         project_name = arguments[1]
