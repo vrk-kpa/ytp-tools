@@ -47,9 +47,17 @@ class YtpDevelopMain(object):
 
     def paster_serve(self, name=None):
         subprocess.call(["/usr/sbin/ufw", "allow", "5000"])
-        subprocess.call(["/usr/bin/sudo", "-u", "www-data", os.path.join(self.virtual_environment, "bin/paster"), "serve", "/etc/ckan/default/production.ini"])
-        print "Failed to launch server"
-        return 1  # exit via ctrl-c
+        process_arguments = ["/usr/bin/sudo", "-u", "www-data", os.path.join(self.virtual_environment, "bin/paster"), "serve", "/etc/ckan/default/production.ini"]
+        process = subprocess.Popen(process_arguments)
+        try:
+            process.wait()  # exit via ctrl-c
+        finally:  # ensure that process is terminated
+            try:
+                process.terminate()
+            except:
+                pass
+            print "killed"
+            return 0
 
     def _get_mappings(self):
         if self._mappings is None:
@@ -71,21 +79,30 @@ class YtpDevelopMain(object):
     def main(self, arguments):
         if getpass.getuser() != 'root':
             print "You must run this script as root"
-            exit(3)
+            return 4
 
-        if len(arguments) != 2:
-            print u"Usage: %s <project-name>\n       %s --list\n       %s --serve\n" % (arguments[0], arguments[0], arguments[0])
+        if len(arguments) < 2 or "--help" in arguments or "-h" in arguments:
+            print u"Usage: %s <project-name>...\n       %s --list\n       %s --serve\n" % (arguments[0], arguments[0], arguments[0])
             print u"Available projects:\n"
             self.list_projects()
-            exit(2)
+            return 2
 
-        project_name = arguments[1]
-        method = self._get_mapping(project_name)
-        if method:
-            return method(project_name)
+        methods = []
+        for project_name in arguments[1:]:
+            method = self._get_mapping(project_name)
+            if not method:
+                print u"Failed to find handler for project name '%s'" % project_name
+                return 3
+            methods.append(method)
 
-        print u"Failed to find method project name %s" % project_name
-        exit(3)
+        assert len(methods) > 0
+
+        for method in methods:
+            return_code = method(project_name)
+            if return_code != 0:
+                return return_code
+
+        return 0
 
 if __name__ == '__main__':
     exit(YtpDevelopMain().main(sys.argv))
