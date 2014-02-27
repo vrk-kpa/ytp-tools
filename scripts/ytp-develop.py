@@ -29,6 +29,10 @@ class YtpDevelopMain(object):
         return 0
 
     def _replace_with_link(self, original_path, source_path):
+        if os.path.islink(original_path):
+            print u"Already linked"
+            return 0
+
         shutil.rmtree(original_path)
         os.symlink(source_path, original_path)
         return 0
@@ -39,10 +43,14 @@ class YtpDevelopMain(object):
     def develop_drupal(self, name):
         return self._replace_with_link("/var/www/ytp/sites/all/themes/ytp_theme", "/src/modules/ytp-theme-drupal")
 
-    def list_projects(self, name=None):
+    def _get_projects(self):
         for project_name in os.listdir(self.source_path):
             if os.path.isdir(os.path.join(self.source_path, project_name)) and self._get_mapping(project_name):
-                print project_name
+                yield project_name
+
+    def list_projects(self, name=None):
+        for project_name in self._get_projects():
+            print project_name
         return 0
 
     def paster_serve(self, name=None):
@@ -60,11 +68,20 @@ class YtpDevelopMain(object):
             print "killed"
             return 0
 
+    def _execute_all(self, name=None):
+        if name != '--all':
+            return
+        methods = {}
+        for project_name in self._get_projects():
+            methods[project_name] = self._get_mapping(project_name)
+        self._execute_methods(methods)
+
     def _get_mappings(self):
         if self._mappings is None:
             self._mappings = {re.compile(u'^ckanext-.+'): self.develop_ckanext, u'ytp-assets-common': self.develop_assets,
                               u'ytp-theme-drupal': self.develop_drupal,
-                              u'--list': self.list_projects, u'--serve': self.paster_serve}
+                              u'--list': self.list_projects, u'--serve': self.paster_serve,
+                              u'--all': self._execute_all}
         return self._mappings
 
     def _get_mapping(self, project_name):
@@ -77,33 +94,43 @@ class YtpDevelopMain(object):
                     return method
         return None
 
+    def _execute_methods(self, methods):
+        end_return_code = 0
+        for project_name, method in methods.iteritems():
+            return_code = method(project_name)
+            if return_code != 0:
+                end_return_code = return_code
+
+        return end_return_code
+
     def main(self, arguments):
         if getpass.getuser() != 'root':
             print "You must run this script as root"
             return 4
 
         if len(arguments) < 2 or "--help" in arguments or "-h" in arguments:
-            print u"Usage: %s <project-name>...\n       %s --list\n       %s --serve\n" % (arguments[0], arguments[0], arguments[0])
+            print u"Usage: %s <project-name>...\n       %s --list\n       %s --serve\n       %s --all\n" \
+                % (arguments[0], arguments[0], arguments[0], arguments[0])
             print u"Available projects:\n"
             self.list_projects()
             return 2
 
-        methods = []
+        methods = {}
         for project_name in arguments[1:]:
             method = self._get_mapping(project_name)
             if not method:
                 print u"Failed to find handler for project name '%s'" % project_name
                 return 3
-            methods.append(method)
+            methods[project_name] = method
 
         assert len(methods) > 0
 
-        for method in methods:
-            return_code = method(project_name)
-            if return_code != 0:
-                return return_code
+        return self._execute_methods(methods)
 
-        return 0
 
 if __name__ == '__main__':
-    exit(YtpDevelopMain().main(sys.argv))
+    exit_code = YtpDevelopMain().main(sys.argv)
+    if exit_code != 0:
+        print u"\nProcess failed. See output for details.\n"
+
+    exit(exit_code)
