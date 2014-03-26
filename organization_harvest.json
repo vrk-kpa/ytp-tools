@@ -1,4 +1,5 @@
 [
-    "HRI",
-    "DataGovUk"
+    { "name": "hri", "title": "Helsinki Region Infoshare" },
+    { "name": "datagovuk", "title": "Data.Gov.UK"},
+    { "name": "maanmittauslaitos", "title": "Maanmittauslaitos" }
 ]
