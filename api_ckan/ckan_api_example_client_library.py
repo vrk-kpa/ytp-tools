@@ -21,7 +21,6 @@ if __name__ == '__main__':
              e.g. 12345678-90ab-f000-f000-f0d9e8c7b6aa\n"
 
     if len(sys.argv) != 3:
-        #log.error('Wrong number of arguments')
         print usage
         sys.exit()
 
