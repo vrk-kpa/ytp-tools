@@ -141,6 +141,16 @@ class ContinuousDeployer:
             log.error("Failed to generate inventory")
             raise
 
+    def track_task_execution_times(self):
+        try:
+            os.makedirs(self.deploy_path + "/ytp/ansible/callback_plugins")
+        except:
+            pass
+        try:
+            subprocess.call(["cp -f profile_tasks.py " + self.deploy_path + "/ytp/ansible/callback_plugins/"], shell=True)
+        except:
+            log.error("Failed to insert callback plugin")
+
     def run_playbook(self, playbookfile):
         """Run a playbook."""
 
@@ -177,8 +187,11 @@ class ContinuousDeployer:
         try:
             message += self.commit_details["CommitDetails"] + "\nGit commit " + self.commit_details["CommitId"] + "\n\n"
             message += subprocess.check_output(["tail -n 100 deploy.log"], shell=True, cwd=self.deploy_path)
+            message += subprocess.check_output(["tail -n 100 time_log_*.log"], shell=True, cwd=self.deploy_path)
         except:
             log.error("Failed to buildup report")
+            raise
+
         self.sns.publish(topic=secrets.aws_arn, message=message, subject=title)
         log.debug("Report sent")
 
@@ -202,6 +215,7 @@ if __name__ == "__main__":
         deploy.create_infrastructure_stack(settings.cloudformation_templatefile)
         deploy.wait_for_stack_creation()
         deploy.generate_inventory_file()
+        deploy.track_task_execution_times()
 
         deploy.run_playbook("connection-test.yml")
         deploy.run_playbook("cluster-dbserver.yml")
