@@ -24,7 +24,7 @@ class CallbackModule(object):
             self.stats[self.current] = time.time() - self.stats[self.current]
 
         results = sorted(self.stats.items(), key=lambda value: value[1], reverse=True,)
-        results = results[:50]
+        results = results[:15]
 
         with open("../../time_log_" + str(int(time.time())) + ".log", "w") as logfile:
             for name, elapsed in results:
