@@ -7,6 +7,6 @@ project_prefix = "ytp"
 git_url_ytp = "https://github.com/yhteentoimivuuspalvelut/ytp.git"
 git_url_secrets = "git@github.com:yhteentoimivuuspalvelut/ytp-secrets.git"
 
-cloudformation_templatefile = "simple-test.template"
+cloudformation_templatefile = "simple-deployment.template"
 cloudformation_create_timeout = 600
 cloudformation_create_pollrate = 10

@@ -159,7 +159,7 @@ class ContinuousDeployer:
         try:
             with open(self.deploy_path+"/"+playbookfile+"-"+str(time.time())+"-std.log", "w") as logfile_std:
                 with open(self.deploy_path+"/"+playbookfile+"-"+str(time.time())+"-err.log", "w") as logfile_err:
-                    return_code = subprocess.call(["ansible-playbook --private-key=" + secrets.aws_keyfile + " -i auto-generated-inventory --user=ubuntu " +
+                    return_code = subprocess.call(["/usr/local/bin/ansible-playbook --private-key=" + secrets.aws_keyfile + " -i auto-generated-inventory --user=ubuntu " +
                                                   playbookfile], shell=True, cwd=self.deploy_path+"/ytp/ansible", stdout=logfile_std, stderr=logfile_err)
                     if return_code != 0:
                         raise Exception("Running the playbook returned code", return_code)
