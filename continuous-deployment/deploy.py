@@ -187,7 +187,7 @@ class ContinuousDeployer:
         try:
             message += self.commit_details["CommitDetails"] + "\nGit commit " + self.commit_details["CommitId"] + "\n\n"
             message += subprocess.check_output(["tail -n 100 deploy.log"], shell=True, cwd=self.deploy_path)
-            message += subprocess.check_output(["tail -n 100 time_log_*.log"], shell=True, cwd=self.deploy_path)
+            message += subprocess.check_output(["head -n 10 time_log_*.log"], shell=True, cwd=self.deploy_path)
         except:
             log.error("Failed to buildup report")
             raise
