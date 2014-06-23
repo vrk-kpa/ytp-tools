@@ -41,7 +41,7 @@ class ContinuousDeployer:
             raise
 
         file_logger = logging.FileHandler(self.deploy_path + '/deploy.log')
-        file_logger.setLevel(logging.DEBUG)
+        file_logger.setLevel(logging.INFO)
         file_formatter = logging.Formatter('%(asctime)s %(levelname)-8s %(message)s')
         file_logger.setFormatter(file_formatter)
         log.addHandler(file_logger)
@@ -57,7 +57,7 @@ class ContinuousDeployer:
         """Clone and extract sources and store last commit information."""
 
         with open(os.devnull, "w") as devnull:
-            log.info("Fetching sources from git")
+            log.debug("Fetching sources from git")
             subprocess.call(["git", "clone", settings.git_url_ytp], cwd=self.deploy_path, stdout=devnull, stderr=devnull)
 
             try:
@@ -93,7 +93,7 @@ class ContinuousDeployer:
     def create_infrastructure_stack(self, template_filename):
         """Create an infrastructure stack based on a cloudformation template."""
 
-        log.info("Creating infrastructure based on template " + template_filename)
+        log.info("Creating infrastructure based on " + template_filename)
         with open(settings.relative_template_path + template_filename, "r") as template_file:
             template = template_file.read()
 
@@ -131,7 +131,7 @@ class ContinuousDeployer:
             for output in outputs:
                 self.cloudform_outputs[output.key] = output.value
 
-            log.info("Generating inventory file")
+            log.debug("Generating inventory file")
             with open(self.deploy_path + "/ytp/ansible/auto-generated-inventory", "w") as inventory:
                 inventory.write("[webserver]\n" + self.cloudform_outputs['PublicDNSWeb'] +
                                 "\n\n[webserver:vars]\nsecret_variables=variables-alpha.yml\n\n" +
@@ -154,16 +154,17 @@ class ContinuousDeployer:
     def run_playbook(self, playbookfile):
         """Run a playbook."""
 
-        log.info("Running playbook " + playbookfile)
+        log.debug("Running playbook " + playbookfile)
         start_time = time.time()
         try:
             with open(self.deploy_path+"/"+playbookfile+"-"+str(time.time())+"-std.log", "w") as logfile_std:
                 with open(self.deploy_path+"/"+playbookfile+"-"+str(time.time())+"-err.log", "w") as logfile_err:
-                    return_code = subprocess.call(["/usr/local/bin/ansible-playbook --private-key=" + secrets.aws_keyfile + " -i auto-generated-inventory --user=ubuntu " +
-                                                  playbookfile], shell=True, cwd=self.deploy_path+"/ytp/ansible", stdout=logfile_std, stderr=logfile_err)
+                    return_code = subprocess.call(["/usr/local/bin/ansible-playbook --private-key=" + secrets.aws_keyfile +
+                                                  " -i auto-generated-inventory --user=ubuntu " + playbookfile], shell=True,
+                                                  cwd=self.deploy_path+"/ytp/ansible", stdout=logfile_std, stderr=logfile_err)
                     if return_code != 0:
                         raise Exception("Running the playbook returned code", return_code)
-                    log.debug("Finished running playbook {0} in {1} seconds".format(playbookfile, int(time.time()-start_time)))
+                    log.info("Finished playbook {0} in {1} seconds".format(playbookfile, int(time.time()-start_time)))
         except:
             log.error("Failed running playbook {0} after {1} seconds".format(playbookfile, int(time.time()-start_time)))
             log.error("Ansible logs:\n" + subprocess.check_output(["tail -n 20 " + playbookfile + "*.log"], shell=True, cwd=self.deploy_path))
@@ -173,7 +174,7 @@ class ContinuousDeployer:
 
         try:
             req = requests.get(url, verify=False)
-            log.debug("Server returned ok for " + url) if req.status_code == 200 else log.error("Server returned {0} for {1}".format(req.status_code, url))
+            log.info("Server returned OK for " + url) if req.status_code == 200 else log.error("Server returned {0} for {1}".format(req.status_code, url))
         except:
             log.error("Failed to reach server at " + url)
 
@@ -186,7 +187,7 @@ class ContinuousDeployer:
 
         try:
             message += self.commit_details["CommitDetails"] + "\nGit commit " + self.commit_details["CommitId"] + "\n\n"
-            message += subprocess.check_output(["tail -n 100 deploy.log"], shell=True, cwd=self.deploy_path)
+            message += subprocess.check_output(["tail -n 100 deploy.log"], shell=True, cwd=self.deploy_path) + "\n"
             message += subprocess.check_output(["head -n 10 time_log_*.log"], shell=True, cwd=self.deploy_path)
         except:
             log.error("Failed to buildup report")
