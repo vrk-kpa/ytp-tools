@@ -39,7 +39,7 @@
           "Ebs" : {
             "VolumeType" : "gp2",
             "DeleteOnTermination" : "true",
-            "VolumeSize" : "6"
+            "VolumeSize" : "8"
            }
         } ],
         "SecurityGroups" : ["ytp-autodeploy"],
