@@ -1,0 +1,69 @@
+<!doctype>
+<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/rickshaw/1.4.6/rickshaw.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/rickshaw/1.4.6/rickshaw.min.css">
+
+<style>
+#chart_container {
+        display: inline-block;
+}
+#chart {
+        float: left;
+}
+#legend {
+        float: left;
+        margin-right: 25px;
+}
+#y_axis {
+        float: left;
+        width: 40px;
+}
+
+</style>
+
+<div id="chart_container">
+    <div id="legend"></div>
+    <div id="y_axis"></div>
+    <div id="chart"></div>
+    <div id="preview"></div>
+</div>
+
+<script>
+
+$.getJSON( "results.json", function( data ) {
+
+    var palette = new Rickshaw.Color.Palette( { scheme: 'spectrum2000' } );
+
+    $.each(data, function(index, value) {
+        data[index].color = palette.color();
+    });
+
+    var graph = new Rickshaw.Graph( {
+            element: document.querySelector("#chart"),
+            width: 1100,
+            height: 700,
+            renderer: 'scatterplot',
+            series: data
+    } );
+
+    graph.render();
+
+    var hoverDetail = new Rickshaw.Graph.HoverDetail( {
+    graph: graph,
+    } );
+
+    var legend = new Rickshaw.Graph.Legend( {
+        graph: graph,
+        element: document.getElementById('legend')
+
+    } );
+
+    var slider = new Rickshaw.Graph.RangeSlider({
+        graph: graph,
+        element: document.querySelector('#preview')
+    });
+  
+});
+
+</script>
