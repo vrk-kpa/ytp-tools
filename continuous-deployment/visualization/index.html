@@ -1,8 +1,11 @@
 <!doctype>
 <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/rickshaw/1.4.6/rickshaw.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/rickshaw/1.4.6/rickshaw.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/rickshaw/1.4.6/rickshaw.min.css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.4/css/jquery-ui.css">
+<link rel="stylesheet" href="extensions.css">
 
 <style>
 #chart_container {
@@ -23,14 +26,14 @@
 </style>
 
 <div id="chart_container">
-    <div id="legend"></div>
+    
     <div id="y_axis"></div>
     <div id="chart"></div>
     <div id="preview"></div>
 </div>
+<div id="legend"></div>
 
 <script>
-
 $.getJSON( "results.json", function( data ) {
 
     var palette = new Rickshaw.Color.Palette( { scheme: 'spectrum2000' } );
@@ -65,5 +68,4 @@ $.getJSON( "results.json", function( data ) {
     });
   
 });
-
 </script>
