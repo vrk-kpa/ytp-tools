@@ -3,7 +3,7 @@
 
 """
 This script is an example on how to use the CKAN API of Avoindata.fi.
-Refer to http://docs.ckan.org/en/latest/api.html for further info on how to use the CKAN API.
+Refer to http://docs.ckan.org/en/latest/api/index.html for further info on how to use the CKAN API.
 The older docs http://docs.ckan.org/en/ckan-1.7.1/api.html#tools-for-accessing-the-api
 also list some tools and libs for accessing the API.
 """
