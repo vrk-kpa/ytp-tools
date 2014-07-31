@@ -15,7 +15,7 @@ The following code examples are provided here:
 First you need to acquire a user account and an API key:
 
 1. Register to [alpha.avoindata.fi](https://alpha.avoindata.fi) (or try the direct link https://alpha.avoindata.fi/fi/user/register ).
-2. Login and go to your user profile via the top bar (or try the direct link [https://alpha.avoindata.fi/data/fi/user/YOUR_USERNAME](https://alpha.avoindata.fi/data/fi/user/) ).
+2. Login and go to your user profile via your name in the top bar.
 3. Copy-paste your private API key from the user profile.
 
 Then you can install the prequisites for the code examples:
@@ -64,6 +64,6 @@ If you want a more mature and stable, but more generic CKAN playground, you can 
 * [CKAN API client libraries in other languages (old docs, possibly obsolete)][otherclients]
 
 [ckanapidocs]: http://docs.ckan.org/en/latest/api/index.html
-[ckanapilib]: https://github.com/okfn/ckanapilib
+[ckanapilib]: https://github.com/okfn/ckanapi
 [requests]: http://requests.readthedocs.org/en/latest/
 [otherclients]: http://docs.ckan.org/en/ckan-1.7.1/api.html#clients
