@@ -29,10 +29,10 @@ Then you can install the prequisites for the code examples:
 To try out the examples, run the scripts using your API key:
 
     wget https://raw.github.com/yhteentoimivuuspalvelut/ytp-tools/master/api_ckan/ckan_api_example_ckanapi_library.py
-    python ckan_api_example_ckanapi_library.py http://alpha.opendata.fi/data 12345678-90ab-f000-f000-f0d9e8c7b6aa
+    python ckan_api_example_ckanapi_library.py https://alpha.opendata.fi/data 12345678-90ab-f000-f000-f0d9e8c7b6aa
 
     wget https://raw.github.com/yhteentoimivuuspalvelut/ytp-tools/master/api_ckan/ckan_api_example_http.py
-    python ckan_api_example_http.py http://alpha.opendata.fi/data 12345678-90ab-f000-f000-f0d9e8c7b6aa
+    python ckan_api_example_http.py https://alpha.opendata.fi/data 12345678-90ab-f000-f000-f0d9e8c7b6aa
 
 ### Name vs. id vs. title
 
