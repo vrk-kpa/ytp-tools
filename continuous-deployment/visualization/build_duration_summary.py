@@ -14,12 +14,11 @@ log.setLevel(logging.DEBUG)
 
 
 def parse_task_durations_from_log_files():
-    
     log_directory = '../deployment_cache'
     results = defaultdict(list)
 
     for build_directory in os.walk(log_directory).next()[1]:
-        logfile_list = sorted(glob.glob(log_directory + '/' + build_directory + '/time_log_*.log'))    
+        logfile_list = sorted(glob.glob(log_directory + '/' + build_directory + '/time_log_*.log'))
         timestamp = int(build_directory.strip('cd-ytp-')[:-3])
 
         if len(logfile_list) != 5:
@@ -48,7 +47,7 @@ def parse_task_durations_from_log_files():
 def transform_data_for_rickshaw(results):
     series = []
     for task, durations in results.iteritems():
-        series.append({"name": task, "data": sorted(durations, key=itemgetter('x')) })
+        series.append({"name": task, "data": sorted(durations, key=itemgetter('x'))})
     return series
 
 

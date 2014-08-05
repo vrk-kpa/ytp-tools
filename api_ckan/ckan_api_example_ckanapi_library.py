@@ -30,8 +30,8 @@ if __name__ == '__main__':
     print "All names in these examples are tagged with", example_id
 
     ckan_api = ckanapi.RemoteCKAN(sys.argv[1],
-        apikey=sys.argv[2],
-        user_agent='avoindata_ckanapi_example/1.0 ({0})'.format(example_id))
+                                  apikey=sys.argv[2],
+                                  user_agent='avoindata_ckanapi_example/1.0 ({0})'.format(example_id))
 
     print "List all organizations:"
     all_organizations = ckan_api.action.organization_list()
@@ -44,13 +44,13 @@ if __name__ == '__main__':
     print "List first 10 datasets:"
     datasets = ckan_api.action.package_list(limit=10, offset=0)
     pprint.pprint(datasets)
-    
+
     print "Create a new organization:"
-    my_organization_name = 'z-avoindata-org-'+example_id
+    my_organization_name = 'z-avoindata-org-' + example_id
     try:
         new_organization = ckan_api.action.organization_create(
             name=my_organization_name,
-            title='Z CKAN API '+example_id)
+            title='Z CKAN API ' + example_id)
         pprint.pprint(new_organization)
     except ckanapi.NotAuthorized:
         print 'Not authorized'
@@ -63,17 +63,16 @@ if __name__ == '__main__':
     # my_organization_name = 'yksityishenkilo'
 
     print "Create a new dataset:"
-    my_dataset_name = 'z-avoindata-dataset-'+example_id
+    my_dataset_name = 'z-avoindata-dataset-' + example_id
     try:
-        dataset_parameters = {
-            'name':my_dataset_name,
-            'title':'Z CKAN API dataset '+example_id,
-            'notes':'This is a description of the dataset in the source language',
-            'license_id':'Creative Commons Attribution 4.0',
-            'content_type':'Paikkatieto,Avoin data,Ohjeet',
-            'collection_type':'Open Data',
-            'owner_org':my_organization_name
-            }
+        dataset_parameters = {'name': my_dataset_name,
+                              'title': 'Z CKAN API dataset ' + example_id,
+                              'notes': 'This is a description of the dataset in the source language',
+                              'license_id': 'Creative Commons Attribution 4.0',
+                              'content_type': 'Paikkatieto,Avoin data,Ohjeet',
+                              'collection_type': 'Open Data',
+                              'owner_org': my_organization_name}
+
         new_dataset = ckan_api.action.package_create(**dataset_parameters)
         pprint.pprint(new_dataset)
     except ckanapi.NotAuthorized:
