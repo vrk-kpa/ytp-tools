@@ -218,6 +218,8 @@ if __name__ == "__main__":
         deploy.generate_inventory_file()
         deploy.track_task_execution_times()
 
+        time.sleep(15) # Give the instances some time to boot up in order to avoid timeouts
+
         deploy.run_playbook("connection-test.yml")
         deploy.run_playbook("cluster-dbserver.yml")
         deploy.run_playbook("cluster-webserver.yml")
