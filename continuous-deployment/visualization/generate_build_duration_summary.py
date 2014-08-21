@@ -22,7 +22,7 @@ def parse_task_durations_from_log_files():
         timestamp = int(build_directory.strip('cd-ytp-')[:-3])
 
         if len(logfile_list) != 5:
-            log.warn("could not find excepted log files for build {0}".format(build_directory))
+            log.warn("could not find excepted log files for build {0}, skipping build".format(build_directory))
             continue
 
         for playbook_logfile in logfile_list[1:3]:
@@ -53,9 +53,9 @@ def transform_data_for_rickshaw(results):
 
 def write_data_as_json_to_file(data, filename):
     with open(filename, 'w') as jsonfile:
-        json.dump(data, jsonfile)
+        json.dump(data, jsonfile, sort_keys=True, indent=4)
 
 
 if __name__ == "__main__":
     results = parse_task_durations_from_log_files()
-    write_data_as_json_to_file(transform_data_for_rickshaw(results), "results.json")
+    write_data_as_json_to_file(transform_data_for_rickshaw(results), "build_durations.json")

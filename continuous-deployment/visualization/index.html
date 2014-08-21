@@ -34,7 +34,7 @@
 <div id="legend"></div>
 
 <script>
-$.getJSON( "results.json", function( data ) {
+$.getJSON( "build_durations.json", function( data ) {
 
     var palette = new Rickshaw.Color.Palette( { scheme: 'spectrum2000' } );
 
@@ -44,8 +44,8 @@ $.getJSON( "results.json", function( data ) {
 
     var graph = new Rickshaw.Graph( {
             element: document.querySelector("#chart"),
-            width: 1100,
-            height: 700,
+            width: 1300,
+            height: 1000,
             renderer: 'scatterplot',
             series: data
     } );
