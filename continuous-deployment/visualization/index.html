@@ -30,6 +30,7 @@
     <div id="y_axis"></div>
     <div id="chart"></div>
     <div id="preview"></div>
+    <div id="smoother"></div>
 </div>
 <div id="legend"></div>
 
@@ -46,7 +47,7 @@ $.getJSON( "build_durations.json", function( data ) {
             element: document.querySelector("#chart"),
             width: 1300,
             height: 1000,
-            renderer: 'scatterplot',
+            renderer: 'line',
             series: data
     } );
 
@@ -66,6 +67,12 @@ $.getJSON( "build_durations.json", function( data ) {
         graph: graph,
         element: document.querySelector('#preview')
     });
+
+    var smoother = new Rickshaw.Graph.Smoother( {
+        graph: graph,
+        element: document.querySelector('#smoother')
+    } );
+
   
 });
 </script>
