@@ -99,7 +99,11 @@ class ContinuousDeployer:
 
         stack_parameters = [("KeyName", secrets.aws_instance_key_name), ("DeploymentId", self.deploy_id)]
 
-        self.cloudform.create_stack(self.deploy_id, template_body=template, parameters=stack_parameters, tags=self.commit_details, timeout_in_minutes=10)
+        self.cloudform.create_stack(self.deploy_id,
+                                    template_body=template,
+                                    parameters=stack_parameters,
+                                    tags=self.commit_details,
+                                    timeout_in_minutes=settings.cloudformation_create_timeout)
         log.debug("Successfully requested for stack")
 
     def wait_for_stack_creation(self):
