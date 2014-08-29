@@ -14,7 +14,7 @@ The following code examples are provided here:
 
 First you need to acquire a user account and an API key:
 
-1. Register to [alpha.avoindata.fi](https://alpha.avoindata.fi) (or try the direct link https://alpha.avoindata.fi/fi/user/register ).
+1. Register to [beta.avoindata.fi](https://beta.avoindata.fi) (or try the direct link https://beta.avoindata.fi/fi/user/register ).
 2. Login and go to your user profile via your name in the top bar.
 3. Copy-paste your private API key from the user profile.
 
@@ -29,10 +29,10 @@ Then you can install the prequisites for the code examples:
 To try out the examples, run the scripts using your API key:
 
     wget https://raw.github.com/yhteentoimivuuspalvelut/ytp-tools/master/api_ckan/ckan_api_example_ckanapi_library.py
-    python ckan_api_example_ckanapi_library.py https://alpha.opendata.fi/data 12345678-90ab-f000-f000-f0d9e8c7b6aa
+    python ckan_api_example_ckanapi_library.py https://beta.opendata.fi/data 12345678-90ab-f000-f000-f0d9e8c7b6aa
 
     wget https://raw.github.com/yhteentoimivuuspalvelut/ytp-tools/master/api_ckan/ckan_api_example_http.py
-    python ckan_api_example_http.py https://alpha.opendata.fi/data 12345678-90ab-f000-f000-f0d9e8c7b6aa
+    python ckan_api_example_http.py https://beta.opendata.fi/data 12345678-90ab-f000-f000-f0d9e8c7b6aa
 
 ### Name vs. id vs. title
 
@@ -51,7 +51,7 @@ As our service is constantly developing, we may make changes to the data schema 
 
 ## Disclaimer
 
-As this is a development version of the service, any data you import/create in the service can be lost without notice at any time. Furthermore, new software is deployed daily (sometimes several times per day) to the alpha server from the master branch, so it is excepted that the server is sometimes down and things will break. However, the API should be much more stable and less buggy than the web interface.
+As this is a development version of the service, any data you import/create in the service can be lost without notice at any time. Furthermore, new software is deployed daily (sometimes several times per day) to the servers from the master branch, so it is excepted that the server is sometimes down and things will break. However, the API should be much more stable and less buggy than the web interface.
 
 ## Help and support
 

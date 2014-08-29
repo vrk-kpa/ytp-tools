@@ -191,7 +191,7 @@ if __name__ == '__main__':
     usage = "\
     Usage: ./ckan_api_example.py API_URL API_KEY\n\
     API_URL: Url to CKAN API including api directory without trailing foreward slash,\n\
-             e.g. http://alpha.avoindata.fi/data/api\n\
+             e.g. http://beta.avoindata.fi/data/api\n\
     API_KEY: API key of the authorized user whose permissions are used for the requests,\n\
              e.g. 12345678-90ab-f000-f000-f0d9e8c7b6aa\n"
 
