@@ -1,0 +1,312 @@
+{
+    "nodes":[
+        {
+            "name": "Aineet, tarvikkeet ja tavarat"
+        },
+        {
+            "name": "Henkilöstökulut"
+        },
+        {
+            "name": "Vuokrat"
+        },
+        {
+            "name": "Palvelut"
+        },
+        {
+            "name": "Muut"
+        },
+        {
+            "name": "Poistot"
+        }
+        ,
+
+        {
+            "name": "Valtiovarainministeriö"
+        },
+        {
+            "name": "Valtiokonttori"
+        },
+        {
+            "name": "Tulli"
+        },
+        {
+            "name": "Verohallinto"
+        },
+
+        {
+            "name": "Valtion talous- ja henkilöstöhallinnon palvelukeskus"
+        },
+        {
+            "name": "Valtion tieto- ja viestintätekniikkakeskus Valtori"
+        },
+        {
+            "name": "Tilastokeskus"
+        },
+        {
+            "name": "Etelä-Suomen aluehallintovirasto"
+        }
+    ],
+    "links":[
+
+
+        {
+            "source": 6,
+            "target": 0,
+            "value": 197718.59
+        },
+        {
+            "source": 6,
+            "target": 1,
+            "value": 18704962.08
+        },
+        {
+            "source": 6,
+            "target": 2,
+            "value": 2636849.91
+        },
+        {
+            "source": 6,
+            "target": 3,
+            "value": 7468372.32
+        },
+        {
+            "source": 6,
+            "target": 4,
+            "value": 2116176.03
+        },
+        {
+            "source": 6,
+            "target": 5,
+            "value": 206567.85
+        }
+
+        ,
+        {
+            "source": 7,
+            "target": 0,
+            "value": 164985.58
+        },
+        {
+            "source": 7,
+            "target": 1,
+            "value": 14118103.39
+        },
+        {
+            "source": 7,
+            "target": 2,
+            "value": 2074206.81
+        },
+        {
+            "source": 7,
+            "target": 3,
+            "value": 11748993.07
+        },
+        {
+            "source": 7,
+            "target": 4,
+            "value": 1636745.19
+        },
+        {
+            "source": 7,
+            "target": 5,
+            "value": 3155761.5
+        }
+
+        ,
+        {
+            "source": 8,
+            "target": 0,
+            "value": 2567346.36
+        },
+        {
+            "source": 8,
+            "target": 1,
+            "value": 70513807.65
+        },
+        {
+            "source": 8,
+            "target": 2,
+            "value": 7684101.03
+        },
+        {
+            "source": 8,
+            "target": 3,
+            "value": 10270698.16
+        },
+        {
+            "source": 8,
+            "target": 4,
+            "value": 2345428.93
+        },
+        {
+            "source": 8,
+            "target": 5,
+            "value": 5104095.46
+        }
+
+        ,
+        {
+            "source": 9,
+            "target": 0,
+            "value": 2368275.53
+        },
+        {
+            "source": 9,
+            "target": 1,
+            "value": 152769216.2
+
+        },
+        {
+            "source": 9,
+            "target": 2,
+            "value": 17446095.40
+        },
+        {
+            "source": 9,
+            "target": 3,
+            "value": 61321231.65
+        },
+        {
+            "source": 9,
+            "target": 4,
+            "value": 8088795.28
+        },
+        {
+            "source": 9,
+            "target": 5,
+            "value": 8820174.23
+        }
+
+
+
+        ,
+        {
+            "source": 10,
+            "target": 0,
+            "value": 224964.01
+        },
+        {
+            "source": 10,
+            "target": 1,
+            "value": 19727329.53
+        },
+        {
+            "source": 10,
+            "target": 2,
+            "value": 1885009.89
+        },
+        {
+            "source": 10,
+            "target": 3,
+            "value": 9423906.73
+        },
+        {
+            "source": 10,
+            "target": 4,
+            "value": 524733.45
+        },
+        {
+            "source": 10,
+            "target": 5,
+            "value": 243601.74
+        }
+
+        ,
+        {
+            "source": 11,
+            "target": 0,
+            "value": 292142.17
+        },
+        {
+            "source": 11,
+            "target": 1,
+            "value": 10293503.32
+        },
+        {
+            "source": 11,
+            "target": 2,
+            "value": 3273077.72
+        },
+        {
+            "source": 11,
+            "target": 3,
+            "value": 16132067.81
+        },
+        {
+            "source": 11,
+            "target": 4,
+            "value": 4062989.08
+        },
+        {
+            "source": 11,
+            "target": 5,
+            "value": 250915.61
+        }
+
+        ,
+        {
+            "source": 12,
+            "target": 0,
+            "value": 595908.65
+        },
+        {
+            "source": 12,
+            "target": 1,
+            "value": 28493400.08
+        },
+        {
+            "source": 12,
+            "target": 2,
+            "value": 3559858.93
+        },
+        {
+            "source": 12,
+            "target": 3,
+            "value": 3430706.6
+        },
+        {
+            "source": 12,
+            "target": 4,
+            "value": 1269296.64
+        },
+        {
+            "source": 12,
+            "target": 5,
+            "value": 168512.36
+
+        }
+
+        ,
+        {
+            "source": 13,
+            "target": 0,
+            "value": 1140957.08
+        },
+        {
+            "source": 13,
+            "target": 1,
+            "value": 66213023.12
+        },
+        {
+            "source": 13,
+            "target": 2,
+            "value": 8750788.22
+        },
+        {
+            "source": 13,
+            "target": 3,
+            "value": 9274223.64
+        },
+        {
+            "source": 13,
+            "target": 4,
+            "value": 2140848.49
+        },
+        {
+            "source": 13,
+            "target": 5,
+            "value": 103199.32
+
+        }
+    ]
+}
