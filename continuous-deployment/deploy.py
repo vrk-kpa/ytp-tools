@@ -61,8 +61,7 @@ class ContinuousDeployer:
             log.debug("Fetching sources from git")
             subprocess.call(["git", "clone", settings.git_url_ytp], cwd=self.deploy_path, stdout=devnull, stderr=devnull)
             #Checking out beta branch.
-            subprocess.call("git","fetch")
-            subprocess.call("git","checkout beta")
+            subprocess.call(["git","checkout beta"],cwd=self.deploy_path, stdout=devnull,stderr=devnull)
             try:
                 git_log_format = "--pretty=format:{\"CommitId\":\"%H\",\"CommitDetails\":\"%an - %f - %ad\"}"
                 self.commit_details = json.loads(subprocess.check_output(["git", "log", "-1", git_log_format], cwd=self.deploy_path+"/ytp"))
@@ -145,6 +144,7 @@ class ContinuousDeployer:
                                 "[dbserver]\n" + self.cloudform_outputs['PublicDNSDb'] +
                                 "\n\n[dbserver:vars]\nsecret_variables=variables-alpha.yml\n\n")
         except:
+            deployment_error = True
             log.error("Failed to generate inventory")
             raise
 
