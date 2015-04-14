@@ -61,7 +61,7 @@ class ContinuousDeployer:
             log.debug("Fetching sources from git")
             subprocess.call(["git", "clone", settings.git_url_ytp], cwd=self.deploy_path, stdout=devnull, stderr=devnull)
             #Checking out beta branch.
-            subprocess.call(["git","checkout beta"],cwd=self.deploy_path, stdout=devnull,stderr=devnull)
+            subprocess.call(["git","checkout", "beta"],cwd=self.deploy_path, stdout=devnull,stderr=devnull)
             try:
                 git_log_format = "--pretty=format:{\"CommitId\":\"%H\",\"CommitDetails\":\"%an - %f - %ad\"}"
                 self.commit_details = json.loads(subprocess.check_output(["git", "log", "-1", git_log_format], cwd=self.deploy_path+"/ytp"))
@@ -144,7 +144,7 @@ class ContinuousDeployer:
                                 "[dbserver]\n" + self.cloudform_outputs['PublicDNSDb'] +
                                 "\n\n[dbserver:vars]\nsecret_variables=variables-alpha.yml\n\n")
         except:
-            deployment_error = True
+            self.deployment_error = True
             log.error("Failed to generate inventory")
             raise
 
@@ -173,7 +173,7 @@ class ContinuousDeployer:
                         raise Exception("Running the playbook returned code", return_code)
                     log.info("Finished playbook {0} in {1} seconds".format(playbookfile, int(time.time()-start_time)))
         except:
-            deployment_error = True
+            self.deployment_error = True
             log.error("Failed running playbook {0} after {1} seconds".format(playbookfile, int(time.time()-start_time)))
             log.error("Ansible logs:\n" + subprocess.check_output(["tail -n 20 " + playbookfile + "*.log"], shell=True, cwd=self.deploy_path))
 
@@ -191,7 +191,7 @@ class ContinuousDeployer:
         """Send deployment report as SNS, which can be subscribed with email etc from AWS console."""
 
         log.debug("Preparing report")
-        if deployment_error:
+        if self.deployment_error:
             title = "Error while deploying: {0}".format(self.deploy_id)
         else:
             title = "Deploy finished: {0}".format(self.deploy_id)
