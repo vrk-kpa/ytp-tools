@@ -29,6 +29,7 @@ class ContinuousDeployer:
     deploy_path = ""
     commit_details = None
     cloudform_outputs = {}
+    deployment_error = False
 
     def __init__(self, project_prefix):
         self.deploy_id = "cd-" + project_prefix + "-" + str(int(time.time() * 1000))
@@ -59,7 +60,9 @@ class ContinuousDeployer:
         with open(os.devnull, "w") as devnull:
             log.debug("Fetching sources from git")
             subprocess.call(["git", "clone", settings.git_url_ytp], cwd=self.deploy_path, stdout=devnull, stderr=devnull)
-
+            #Checking out beta branch.
+            subprocess.call("git","fetch")
+            subprocess.call("git","checkout beta")
             try:
                 git_log_format = "--pretty=format:{\"CommitId\":\"%H\",\"CommitDetails\":\"%an - %f - %ad\"}"
                 self.commit_details = json.loads(subprocess.check_output(["git", "log", "-1", git_log_format], cwd=self.deploy_path+"/ytp"))
@@ -170,6 +173,7 @@ class ContinuousDeployer:
                         raise Exception("Running the playbook returned code", return_code)
                     log.info("Finished playbook {0} in {1} seconds".format(playbookfile, int(time.time()-start_time)))
         except:
+            deployment_error = True
             log.error("Failed running playbook {0} after {1} seconds".format(playbookfile, int(time.time()-start_time)))
             log.error("Ansible logs:\n" + subprocess.check_output(["tail -n 20 " + playbookfile + "*.log"], shell=True, cwd=self.deploy_path))
 
@@ -180,13 +184,18 @@ class ContinuousDeployer:
             req = requests.get(url, verify=False)
             log.info("Server returned OK for " + url) if req.status_code == 200 else log.error("Server returned {0} for {1}".format(req.status_code, url))
         except:
+            deployment_error = True
             log.error("Failed to reach server at " + url)
 
     def send_report(self):
         """Send deployment report as SNS, which can be subscribed with email etc from AWS console."""
 
         log.debug("Preparing report")
-        title = "Deploy finished: {0}".format(self.deploy_id)
+        if deployment_error:
+            title = "Error while deploying: {0}".format(self.deploy_id)
+        else:
+            title = "Deploy finished: {0}".format(self.deploy_id)
+
         message = "Deployment report {0} - {1}\n\n".format(self.deploy_id, time.strftime("%c"))
 
         try:
