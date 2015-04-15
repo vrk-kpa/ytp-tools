@@ -61,7 +61,7 @@ class ContinuousDeployer:
             log.debug("Fetching sources from git")
             subprocess.call(["git", "clone", settings.git_url_ytp], cwd=self.deploy_path, stdout=devnull, stderr=devnull)
             #Checking out beta branch.
-            subprocess.call(["git","checkout", "beta"],cwd=self.deploy_path, stdout=devnull,stderr=devnull)
+            subprocess.call(["git","checkout", "beta"],cwd=self.deploy_path + '/ytp', stdout=devnull,stderr=devnull)
             try:
                 git_log_format = "--pretty=format:{\"CommitId\":\"%H\",\"CommitDetails\":\"%an - %f - %ad\"}"
                 self.commit_details = json.loads(subprocess.check_output(["git", "log", "-1", git_log_format], cwd=self.deploy_path+"/ytp"))
