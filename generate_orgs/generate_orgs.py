@@ -76,33 +76,5 @@ if __name__ == '__main__':
 
 
 
-def old():
-    all_organizations = ckan_api.action.organization_list(all_fields=True)
-    print "Read organizations from csv file:"
-    with open(sys.argv[3], 'r') as f:
-        reader = csv.reader(f)
-        for row in reader:
-            for org in all_organizations:
-                csv_org  = row[0].decode('windows-1252')
-                if csv_org == org['display_name']:
-                    full_org = ckan_api.action.organization_show(id=org['id'], include_datasets=False)
-                    extras = full_org.get('extras', [])
-                    is_public = 'false'
-                    for extra in extras:
-                        if extra['key'] == 'public_adminstration_organization':
-                            is_public = extra['value']
-                    if is_public == 'true':
-                        print "Moving org: " + full_org['name'] + " under parent org: " + parent_org['name']
-                        del full_org['groups'][:]
-                        full_org['groups'].append({"capacity": "public", "name": parent_org['name']})
-                        updated_org = ckan_api.call_action('organization_update', full_org)
-
-
-
-
-
-
-
-
 
 
