@@ -24,6 +24,7 @@ Then you can install the prequisites for the code examples:
     virtualenv avoindata_api_env
     source avoindata_api_env/bin/activate
     pip install requests
+    pip install certifi
     pip install ckanapi
 
 To try out the examples, run the scripts using your API key:
@@ -42,7 +43,7 @@ Many API functions take an *id* as a parameter, but most of the time this actual
 
 ### Required attributes of a new dataset
 
-As our service is constantly developing, we may make changes to the data schema and new required attributes may arise. If you are having trouble creating a new dataset via the API, you can first create a new dataset in the web interface by hand, and then fetch its details from the API with package_show to see which attributes it has.
+As the service is constantly developed, we may make changes to the data schema and new required attributes may appear. If you are having trouble creating a new dataset via the API, you can first create a new dataset in the web interface by hand, and then fetch it from the API with package_show to see which attributes it has.
 
 ## Known issues
 
@@ -51,11 +52,13 @@ As our service is constantly developing, we may make changes to the data schema 
 
 ## Disclaimer
 
-As this is a development version of the service, any data you import/create in the service can be lost without notice at any time. Furthermore, new software is deployed daily (sometimes several times per day) to the servers from the master branch, so it is excepted that the server is sometimes down and things will break. However, the API should be much more stable and less buggy than the web interface.
+Any data you import/create into the development version of the service (beta.avoindata.fi) can be lost without notice at any time.
+
+Furthermore, new software is deployed weekly (sometimes several times per day) to the servers from the master branch, so it is excepted that the server is occasionally down and that things will break. However, in general, the API should be much more stable than the web interface. If you want a more mature and stable, but more generic CKAN playground, you can also try using the [API](http://demo.ckan.org/api) of the [CKAN demo instance](http://demo.ckan.org).
 
 ## Help and support
 
-If you want a more mature and stable, but more generic CKAN playground, you can also try using the [API](http://demo.ckan.org/api) of the [CKAN demo instance](http://demo.ckan.org). If you are having trouble with our API, create an [issue at Github](https://github.com/yhteentoimivuuspalvelut/ytp/issues) or join the discussion at [avoindata.net](http://avoindata.net/questions/suomen-avoimen-datan-portaalin-rakentaminen).
+If you are having trouble with our API, create an [issue at Github](https://github.com/yhteentoimivuuspalvelut/ytp/issues) or join the discussion at [avoindata.net](http://avoindata.net/questions/suomen-avoimen-datan-portaalin-rakentaminen).
 
 ## Further reading
 
