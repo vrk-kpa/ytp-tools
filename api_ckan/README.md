@@ -1,39 +1,46 @@
 
 # API of Avoindata.fi
 
-This directory includes documentation and example code on how to use the CKAN API of Avoindata.fi/Yhteentoimivuuspalvelut. The web service uses CKAN to provide a catalog of open datasets. Through the API, an organization can add their datasets into the service.
+This directory includes documentation and example code on how to use the API of Avoindata.fi/Yhteentoimivuuspalvelut. The web service uses [CKAN](http://ckan.org/) to provide a metadata catalog of open datasets. With the API, you can add and retrieve datasets.
 
-In the CKAN data model, *users* and *datasets* belong to *organizations*. Organizations own datasets and mandate permissions. Datasets describe a single, logical set of open data and can hold *resources* which are files or external links.
+In the CKAN data model, *users* and *datasets* belong to *organizations*. Organizations own datasets and mandate permissions. Datasets are metadata, describing a single, logical set of open data. A dataset has one or more *resource*, which are either files on the server or external links that contain the data itself.
 
 The following code examples are provided here:
 
-* **ckan_api_example_ckanapi_library.py:** A Python example that uses the [ckanapi][ckanapilib] library in making the HTTP requests. If you are using Python, it is advisable to use this library.
-* **ckan_api_example_raw_http.py:** A low-level Python example that uses the [requests][requests] library in making forming pure HTTP requests. If you need to form the HTTP requests by yourself for some reason, this example gives you some basic pointers.
+* **example_ckanapi.py:** A Python example that uses the [ckanapi][ckanapilib] library in making the requests. If you are using Python, it is advisable to use this library.
+* **example_rawhttp.py:** A low-level Python example that uses the [requests][requests] library in making pure HTTP requests. If you need to form the HTTP requests by yourself for some reason (e.g. you use another language that does not have a CKAN API library), this example gives you some basic pointers.
 
 ## Getting started
 
-First you need to acquire a user account and an API key:
+First you need to create a user account to acquire an API key. While you are free to use the API of [Avoindata.fi][avoindata], we hope that you first develop against our development/sandbox environment [beta.avoindata.fi][avoindatabeta]. To acquire an API key:
 
-1. Register to [beta.avoindata.fi](https://beta.avoindata.fi) (or try the direct link https://beta.avoindata.fi/fi/user/register ).
-2. Login and go to your user profile via your name in the top bar.
-3. Copy-paste your private API key from the user profile.
+1. Register to [beta.avoindata.fi][avoindatabeta] (or try the direct link https://beta.avoindata.fi/fi/user/register ).
+2. Login and go to your user profile via your name in the upper-right corner of the top bar.
+3. Copy your private API key from the user profile.
 
-Then you can install the prequisites for the code examples:
+Install the prerequisites for the code examples. On Ubuntu/Debian systems:
 
     sudo apt-get install python-virtualenv
-    virtualenv avoindata_api_env
-    source avoindata_api_env/bin/activate
-    pip install requests
-    pip install certifi
-    pip install ckanapi
+    virtualenv env-avoindata
+    source env-avoindata/bin/activate
+    pip install pyopenssl ndg-httpsclient pyasn1 certifi
+    pip install requests ckanapi
 
 To try out the examples, run the scripts using your API key:
 
-    wget https://raw.github.com/yhteentoimivuuspalvelut/ytp-tools/master/api_ckan/ckan_api_example_ckanapi_library.py
-    python ckan_api_example_ckanapi_library.py https://beta.opendata.fi/data 12345678-90ab-f000-f000-f0d9e8c7b6aa
+    wget https://raw.github.com/yhteentoimivuuspalvelut/ytp-tools/master/api_ckan/example_ckanapi.py
+    python example_ckanapi.py https://beta.opendata.fi/data YOUR_API_KEY
 
-    wget https://raw.github.com/yhteentoimivuuspalvelut/ytp-tools/master/api_ckan/ckan_api_example_http.py
-    python ckan_api_example_http.py https://beta.opendata.fi/data 12345678-90ab-f000-f000-f0d9e8c7b6aa
+    wget https://raw.github.com/yhteentoimivuuspalvelut/ytp-tools/master/api_ckan/example_rawhttp.py
+    python example_rawhttp.py https://beta.opendata.fi/data YOUR_API_KEY
+
+## Using the API
+
+### Dataset vs. package and organization vs. group
+
+In the (newer) user interface of CKAN, a dataset is called a *dataset*, while in the codebase and the API it is mostly called a *package*. These terms mean the same thing.
+
+In CKAN, groups and organizations are slightly different from each other (see [stackoverflow](http://stackoverflow.com/questions/20963965/whats-the-difference-between-organizations-groups-in-ckan)), but on implementation level, an organization can be viewed as a subclass of group. Thus, when working with organizations, you might get a response from the API with something about *groups*.
 
 ### Name vs. id vs. title
 
@@ -49,6 +56,7 @@ As the service is constantly developed, we may make changes to the data schema a
 
 * Deleting an organization or dataset (organization_delete and package_delete) in CKAN does not actually delete the organization or dataset, but merely changes their state to deleted. Successive creations using the same names will fail, complaining that there is already an entity with that name. Deleting them from the Web interface seem to delete them completely.
 * Some methods may falsely return a 405 Not Allowed, for example when requesting for the details of a dataset that does not exist.
+* As the server is HTTPS-only, you might run into problems with certificates. Either upgrade to Python 2.7.9, install pyopenssl or do not verify certificates.
 
 ## Disclaimer
 
@@ -66,6 +74,8 @@ If you are having trouble with our API, create an [issue at Github](https://gith
 * [CKAN API client library and CLI][ckanapilib]
 * [CKAN API client libraries in other languages (old docs, possibly obsolete)][otherclients]
 
+[avoindata]: https://avoindata.fi
+[avoindatabeta]: https://beta.avoindata.fi
 [ckanapidocs]: http://docs.ckan.org/en/latest/api/index.html
 [ckanapilib]: https://github.com/okfn/ckanapi
 [requests]: http://requests.readthedocs.org/en/latest/

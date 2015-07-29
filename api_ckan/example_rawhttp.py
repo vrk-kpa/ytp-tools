@@ -20,6 +20,7 @@ log.setLevel(logging.DEBUG)
 
 verify_ssl = certifi.where()
 
+
 def look_for_ckan_api(base_url):
     """Smoke test: Tries to find a valid CKAN API from the given endpoint, and checks it for various versions."""
 
@@ -142,7 +143,7 @@ def get_dataset(dataset_name, api_url, api_key):
     request_url = api_url + 'package_show'
     log.info("Trying to get package '{0}' from '{1}'".format(dataset_name, request_url))
     request_payload = {
-        'id': 'kansalliskirjasto-sanomalehtikirjasto-meta' #dataset_name
+        'id': 'kansalliskirjasto-sanomalehtikirjasto-meta'  # dataset_name
     }
     request_headers = {
         'authorization': api_key
@@ -195,20 +196,18 @@ def log_response(response):
 if __name__ == '__main__':
 
     usage = "\
-    Usage: ./ckan_api_example.py API_URL API_KEY\n\
-    API_URL: Url to CKAN excluding api directory and without trailing foreward slash,\n\
+    Usage: ./example_rawhttp.py API_URL API_KEY\n\n\
+    API_URL: URL to CKAN, excluding api directory and without trailing foreward slash\n\
              e.g. http://beta.opendata.fi/data\n\
-    API_KEY: API key of the authorized user whose permissions are used for the requests,\n\
+    API_KEY: API key of the authorized user, whose permissions are used for the requests\n\
              e.g. 12345678-90ab-f000-f000-f0d9e8c7b6aa\n"
 
     if len(sys.argv) != 3:
-        log.error('Wrong number of arguments')
         print usage
         sys.exit()
 
     url_prefix = sys.argv[1] + "/api/"
     api_key = sys.argv[2]
-
     api_url = look_for_ckan_api(url_prefix)
 
     log.info("Now using API URL " + api_url)
